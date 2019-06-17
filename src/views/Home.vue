@@ -1,18 +1,38 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="header">
+      <div class="header_wrap">
+        <headerNav/>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import headerNav from "../components/headerNav.vue";
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
-    HelloWorld,
-  },
+    headerNav
+  }
 };
 </script>
+
+<style lang="scss" scoped>
+.home {
+  width: 100%;
+  .header {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 80vh;
+    background: linear-gradient(180deg, #0249ff 0%, #18d3fe 100%) no-repeat;
+    &_wrap {
+      max-width: 1280px;
+      width: 90%;
+    }
+  }
+}
+</style>
+

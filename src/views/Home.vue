@@ -250,7 +250,16 @@ export default {
             border: none;
             background-color: $blue;
             border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
             @include font(16px, white, 400);
+
+            &:hover {
+              opacity: 0.85;
+              transform: translateY(-2px);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+
+            }
 
             &:nth-of-type(1) {
               @include flex-all-center;

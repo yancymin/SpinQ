@@ -5,8 +5,9 @@ $blue: #3973FF;
 $font-color-white-1: #ffffff;
 $font-color-white-2: rgba(255, 255, 255, 0.8);
 $font-color-white-3: rgba(255, 255, 255, 0.6);
-$font-color-black-1: #2C313E;
-$font-color-black-2: rgba(0, 0, 0, 0.8);
+$font-color-black-1: #32325D;
+$font-color-black-2: #525F7F;
+$font-color-black-3: rgba(82, 95, 127, 0.55);
 
 
 @mixin font($size, $color, $weight) {
@@ -26,8 +27,6 @@ $font-color-black-2: rgba(0, 0, 0, 0.8);
 
 @mixin flex-column {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    justify-content: flex-start;
     @content;
 }

@@ -1,0 +1,14 @@
+<svg width="88" height="88" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="5" y="0" width="78" height="88">
+<path d="M44 0L82.1051 22V66L44 88L5.89488 66V22L44 0Z" fill="#C4C4C4"/>
+</mask>
+<g mask="url(#mask0)">
+<path d="M44 0L82.1051 22V66L44 88L5.89488 66V22L44 0Z" fill="#26CADD"/>
+<rect x="24.4727" y="70.3142" width="26" height="8" transform="rotate(-60 24.4727 70.3142)" fill="#0146FF"/>
+<rect x="42.4727" y="39.1372" width="26" height="8" transform="rotate(-60 42.4727 39.1372)" fill="#32325D"/>
+<path d="M18.8035 51.3363C14.9831 37.0783 23.4444 22.4229 37.7023 18.6025M70.4361 37.5013C74.2565 51.7593 65.7952 66.4147 51.5372 70.2351" stroke="white" stroke-width="7"/>
+<circle r="13.8836" transform="matrix(-0.258819 -0.965926 -0.965926 0.258819 22.6293 80.4857)" fill="white" stroke="#0146FF" stroke-width="8"/>
+<circle r="13.119" transform="matrix(-0.258819 -0.965926 -0.965926 0.258819 44.619 44.4187)" fill="white"/>
+<circle r="13.8836" transform="matrix(-0.258819 -0.965926 -0.965926 0.258819 65.3481 6.49376)" fill="white" stroke="#32325D" stroke-width="8"/>
+</g>
+</svg>

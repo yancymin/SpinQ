@@ -1,13 +1,11 @@
-$black: #141516;
-$gray: #383C41;
-$white: #F5F6F8;
-$blue: #3973FF;
-$font-color-white-1: #ffffff;
-$font-color-white-2: rgba(255, 255, 255, 0.8);
-$font-color-white-3: rgba(255, 255, 255, 0.6);
+$black: #32325D;
+$green: #26CADD;
+$gray: #F4F7FB;
+$line: #93AAAD;
+$blue: #0146FF;
 $font-color-black-1: #32325D;
 $font-color-black-2: #525F7F;
-$font-color-black-3: rgba(82, 95, 127, 0.55);
+$font-color-black-3: rgba(82, 95, 127, 0.4);
 
 
 @mixin font($size, $color, $weight) {
@@ -29,4 +27,36 @@ $font-color-black-3: rgba(82, 95, 127, 0.55);
     display: flex;
     flex-direction: column;
     @content;
+}
+
+.ptb-140 {
+    padding: 140px 0;
+}
+
+.pt-140 {
+    padding-top: 140px;
+}
+
+.pb-140 {
+    padding-bottom: 140px;
+}
+
+.mt-48 {
+    margin-top: 48px;
+}
+
+.mb-48 {
+    margin-bottom: 48px;
+}
+
+.mb-24 {
+    margin-bottom: 24px;
+}
+
+.bo-t {
+    border-top: 1px solid #E2E8E9;
+}
+
+.bo-b {
+    border-bottom: 1px solid #E2E8E9;
 }

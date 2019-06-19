@@ -35,7 +35,7 @@
           <img src="../assets/hardware_2.png" alt>
         </div>
       </section>
-      <section class="hardware_3 ptb-140 bo-b">
+      <section class="software_1 ptb-140">
         <div class="container-lg">
           <div class="commonTitle_wrap">
             <commonTitle :titles="titles[3]" class="mb-48"/>
@@ -49,6 +49,29 @@
           <img src="../assets/software_1.png" alt>
         </div>
       </section>
+      <section class="software_2 ptb-80">
+        <div class="container-lg">
+          <div class="video"></div>
+          <div class="right">
+            <commonTitle :titles="titles[4]" class="pb-32 bo-b"/>
+            <ul>
+              <li>内置案例学习</li>
+              <li>自定义量子线路</li>
+              <li>量子知识点介绍</li>
+              <li>量子游戏</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="team ptb-140 bo-b">
+        <div class="container-lg">
+          <commonTitle :titles="titles[5]"/>
+          <h2>科学顾问</h2>
+          <div class="teamIterms">
+            <teamIterm/>
+          </div>
+        </div>
+      </section>
     </main>
   </div>
 </template>
@@ -58,6 +81,7 @@ import headerNav from "../components/headerNav.vue";
 import headerMotion from "../components/headerMotion.vue";
 import headerCard from "../components/headerCard.vue";
 import commonTitle from "../components/commonTitle.vue";
+import teamIterm from "../components/teamIterm.vue";
 import icon_1 from "../assets/icon_1.svg";
 import icon_2 from "../assets/icon_2.svg";
 import icon_3 from "../assets/icon_3.svg";
@@ -72,7 +96,8 @@ export default {
     headerNav,
     headerMotion,
     headerCard,
-    commonTitle
+    commonTitle,
+    teamIterm
   },
   data() {
     return {
@@ -114,8 +139,23 @@ export default {
           subTitle: "SpinQ Software",
           des:
             "全球第一个开放底层脉冲控制的量子计算云平台，提供专业级的科研量子计算实验平台。",
-          titleImg: icon_3,
+          titleImg: icon_4,
           isRight: true
+        },
+        {
+          title: "桌面量子操控软件",
+          subTitle: "SpinQ Software",
+          des:
+            "桌面端量子操控软件主要包括初级（内置案例学习）、进阶（自定义量子线路）、量子知识点介绍以及量子游戏和量子论坛模块。",
+          titleImg: icon_5,
+          isRight: true
+        },
+        {
+          title: "我们的团队",
+          subTitle: "SpinQ Team",
+          des: "",
+          titleImg: icon_6,
+          isRight: false
         }
       ]
     };
@@ -228,7 +268,7 @@ export default {
         height: 440px;
       }
     }
-    .hardware_3 {
+    .software_1 {
       img {
         height: 560px;
         margin-right: -160px;
@@ -252,13 +292,12 @@ export default {
             border-radius: 3px;
             cursor: pointer;
             transition: all 0.3s ease;
-            @include font(16px, white, 400);
+            @include font(16px, white, 600);
 
             &:hover {
               opacity: 0.85;
               transform: translateY(-2px);
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
-
+              box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
             }
 
             &:nth-of-type(1) {
@@ -277,6 +316,66 @@ export default {
             }
           }
         }
+      }
+    }
+
+    .software_2 {
+      background-color: $gray;
+
+      .right {
+        max-width: 440px;
+        ul {
+          margin-top: 32px;
+          @include flex-all-center {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+          }
+          li {
+            display: inline-block;
+            background-color: white;
+            padding: 12px 18px;
+            border-radius: 50px;
+            margin-right: 24px;
+            margin-bottom: 24px;
+            @include flex-all-center;
+            @include font(18px, $font-color-black-1, 600);
+
+            &:before {
+              content: "";
+              display: block;
+              width: 32px;
+              height: 32px;
+              background-image: url("../assets/tag_icon.svg");
+              background-size: 32px 32px;
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+      .video {
+        width: 750px;
+        height: 550px;
+        background-color: #0249ff;
+        background-image: url("../assets/test.webp");
+        background-size: 100% auto;
+        border-radius: 8px;
+        transform: rotate3d(-2.5, -0.866, 0, 24deg) rotateZ(-5deg);
+        box-shadow: -27.1px 62.5px 125px -25px rgba(50, 50, 93, 0.5),
+          -16.2px 37.5px 75px -37.5px rgba(0, 0, 0, 0.6);
+      }
+    }
+
+    .team {
+      .container-lg {
+         @include flex-all-center {
+           flex-direction: column;
+         }
+
+         h2 {
+           margin: 60px 0;
+            @include font(36px, $font-color-black-1, 400);
+
+         }
       }
     }
   }

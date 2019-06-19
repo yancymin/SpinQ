@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/global.scss";
+@import "../style/global.scss"; 
 
 .headerCard {
   position: relative;

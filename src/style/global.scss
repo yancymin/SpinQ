@@ -29,8 +29,15 @@ $font-color-black-3: rgba(82, 95, 127, 0.4);
     @content;
 }
 
+.pb-32 {
+    padding-bottom: 32px;
+}
+
 .ptb-140 {
     padding: 140px 0;
+}
+.ptb-80 {
+    padding: 80px 0;
 }
 
 .pt-140 {
@@ -40,6 +47,7 @@ $font-color-black-3: rgba(82, 95, 127, 0.4);
 .pb-140 {
     padding-bottom: 140px;
 }
+
 
 .mt-48 {
     margin-top: 48px;

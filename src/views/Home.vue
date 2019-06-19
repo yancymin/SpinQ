@@ -78,6 +78,7 @@
         </div>
       </section>
     </main>
+    <globalFooter/>
   </div>
 </template>
 
@@ -87,6 +88,7 @@ import headerMotion from "../components/headerMotion.vue";
 import headerCard from "../components/headerCard.vue";
 import commonTitle from "../components/commonTitle.vue";
 import teamIterm from "../components/teamIterm.vue";
+import globalFooter from "../components/globalFooter.vue";
 import icon_1 from "../assets/icon_1.svg";
 import icon_2 from "../assets/icon_2.svg";
 import icon_3 from "../assets/icon_3.svg";
@@ -101,7 +103,6 @@ import team_4 from "../assets/team_4.png";
 import team_5 from "../assets/team_5.png";
 import team_6 from "../assets/team_6.png";
 
-
 export default {
   name: "home",
   components: {
@@ -109,7 +110,8 @@ export default {
     headerMotion,
     headerCard,
     commonTitle,
-    teamIterm
+    teamIterm,
+    globalFooter
   },
   data() {
     return {
@@ -176,41 +178,41 @@ export default {
           jobTitle: "首席科学顾问",
           des:
             "香港科技大学物理系教授，麻省理工学院物理学博士，清华大学首届基科班本科，从事量子计算研究近20年。",
-            img: team_1
+          img: team_1
         },
         {
           name: "俞大鹏",
           jobTitle: "首席科学顾问",
           des: "中国科学院院士，北京大学物理学院教授，中国南方科技大学教授。",
-             img: team_2
+          img: team_2
         },
         {
           name: "刘 松",
           jobTitle: "技术顾问",
           des:
             "量子器件与芯片加工中心主任，北京大学博士，长期从事量子器件的微纳加工研究。",
-               img: team_3
+          img: team_3
         },
         {
           name: "鲁大为",
           jobTitle: "技术顾问",
           des:
             "南方科技大学物理系教授，中国科学技术大学物理学博士，长期从事量子计算研究。",
-               img: team_4
+          img: team_4
         },
         {
           name: "苗国兴",
           jobTitle: "技术顾问",
           des:
             "滑铁卢大学电子系教授，布朗大学物理学博士，长期从事拓扑量子计算研究。",
-               img: team_5
+          img: team_5
         },
         {
           name: "陈远珍",
           jobTitle: "技术顾问",
           des:
             "南方科技大学量子计算研究所副所长，美国马里兰大学博士，长期从事量子信息和量子材料方面的研究。",
-               img: team_6
+          img: team_6
         }
       ]
     };

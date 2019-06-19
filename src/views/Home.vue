@@ -68,8 +68,13 @@
           <commonTitle :titles="titles[5]"/>
           <h2>科学顾问</h2>
           <div class="teamIterms">
-            <teamIterm/>
+            <teamIterm v-for="(item, index) in teams" :key="index" :teams="item"/>
           </div>
+        </div>
+      </section>
+      <section class="cooperation ptb-140">
+        <div class="container-lg">
+          <img src="../assets/cooperation.png" alt>
         </div>
       </section>
     </main>
@@ -89,6 +94,13 @@ import icon_4 from "../assets/icon_4.svg";
 import icon_5 from "../assets/icon_5.svg";
 import icon_6 from "../assets/icon_6.svg";
 import icon_7 from "../assets/icon_7.svg";
+import team_1 from "../assets/team_1.png";
+import team_2 from "../assets/team_2.png";
+import team_3 from "../assets/team_3.png";
+import team_4 from "../assets/team_4.png";
+import team_5 from "../assets/team_5.png";
+import team_6 from "../assets/team_6.png";
+
 
 export default {
   name: "home",
@@ -157,6 +169,49 @@ export default {
           titleImg: icon_6,
           isRight: false
         }
+      ],
+      teams: [
+        {
+          name: "曾 蓓",
+          jobTitle: "首席科学顾问",
+          des:
+            "香港科技大学物理系教授，麻省理工学院物理学博士，清华大学首届基科班本科，从事量子计算研究近20年。",
+            img: team_1
+        },
+        {
+          name: "俞大鹏",
+          jobTitle: "首席科学顾问",
+          des: "中国科学院院士，北京大学物理学院教授，中国南方科技大学教授。",
+             img: team_2
+        },
+        {
+          name: "刘 松",
+          jobTitle: "技术顾问",
+          des:
+            "量子器件与芯片加工中心主任，北京大学博士，长期从事量子器件的微纳加工研究。",
+               img: team_3
+        },
+        {
+          name: "鲁大为",
+          jobTitle: "技术顾问",
+          des:
+            "南方科技大学物理系教授，中国科学技术大学物理学博士，长期从事量子计算研究。",
+               img: team_4
+        },
+        {
+          name: "苗国兴",
+          jobTitle: "技术顾问",
+          des:
+            "滑铁卢大学电子系教授，布朗大学物理学博士，长期从事拓扑量子计算研究。",
+               img: team_5
+        },
+        {
+          name: "陈远珍",
+          jobTitle: "技术顾问",
+          des:
+            "南方科技大学量子计算研究所副所长，美国马里兰大学博士，长期从事量子信息和量子材料方面的研究。",
+               img: team_6
+        }
       ]
     };
   }
@@ -178,7 +233,8 @@ export default {
     width: 100vw;
     height: 780px;
     overflow: hidden;
-    background: linear-gradient(180deg, #0249ff 0%, #18d3fe 100%) no-repeat;
+    background: linear-gradient(180deg, hsl(223, 80%, 30%) 0%, #18d3fe 100%)
+      no-repeat;
 
     .text-wrap {
       width: 100%;
@@ -338,7 +394,7 @@ export default {
             margin-right: 24px;
             margin-bottom: 24px;
             @include flex-all-center;
-            @include font(18px, $font-color-black-1, 600);
+            @include font(18px, $font-color-black-1, 500);
 
             &:before {
               content: "";
@@ -367,15 +423,32 @@ export default {
 
     .team {
       .container-lg {
-         @include flex-all-center {
-           flex-direction: column;
-         }
+        @include flex-all-center {
+          flex-direction: column;
+        }
 
-         h2 {
-           margin: 60px 0;
-            @include font(36px, $font-color-black-1, 400);
+        h2 {
+          margin: 60px 0;
+          @include font(36px, $font-color-black-1, 400);
+        }
 
-         }
+        .teamIterms {
+          width: 100%;
+          @include flex-all-center {
+            flex-wrap: wrap;
+          }
+        }
+      }
+    }
+
+    .cooperation {
+      width: 100%;
+
+      .container-lg {
+        @include flex-all-center;
+      }
+      img {
+        height: 150px;
       }
     }
   }

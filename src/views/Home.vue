@@ -215,7 +215,7 @@ export default {
     },
 
     play: function() {
-        player.style.visibility = "visible"
+      player.style.visibility = "visible";
     }
   },
   data() {
@@ -679,6 +679,12 @@ export default {
           height: 32px;
           background-image: url("../assets/close.svg");
           background-size: cover;
+          opacity: 0.7;
+          transition: all 0.2s ease;
+
+          &:hover {
+            opacity: 1;
+          }
         }
       }
 

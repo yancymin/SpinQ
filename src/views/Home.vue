@@ -75,8 +75,9 @@
       <section class="news">
         <div class="container-lg">
           <commonTitle :titles="titles[6]"/>
-          <div class="news_scroll-wrap">
-            <div class="lt">
+          <div class="news_scroll-wrap" id="news_scroll-wrap">
+            <span class="cover" id="cover"></span>
+            <div class="lt" id="lt">
               <newsCard v-for="(item, index) in newsCards[0].left" :key="index" :newsCard="item"/>
               <newsCard
                 v-for="(item, index) in newsCards[0].left"
@@ -84,7 +85,7 @@
                 :newsCard="item"
               />
             </div>
-            <div class="rt">
+            <div class="rt" id="rt">
               <newsCard v-for="(item, index) in newsCards[0].right" :key="index" :newsCard="item"/>
               <newsCard
                 v-for="(item, index) in newsCards[0].right"
@@ -92,8 +93,31 @@
                 :newsCard="item"
               />
             </div>
-            <button class="more-news">更多报道</button>
+            <button class="more-news" @click="newsScroll()" id="more-news">更多报道</button>
           </div>
+        </div>
+      </section>
+      <section class="hire ptb-140">
+        <div class="container-lg">
+          <commonTitle :titles="titles[7]" class="mb-80"/>
+          <ul class="hire_list">
+            <li>
+              <div class="default bo-t bo-b" @click="hireShow()" id="listIterm">
+                <h4>软件工程师</h4>
+              </div>
+              <div class="content" id="hire-content">
+                <p class="content_title">岗位职责</p>1. 负责公司产品相关软件的设计、开发和测试；
+                <br>2. 负责撰写需求分析说明书、详细设计、使用手册等相关技术文档；
+                <br>3. 参与公司研发的自有算法的集成。
+                <p class="content_title">岗位要求</p>1. 电子、自动化、软件工程、计算机相关专业本科及以上学历；
+                <br>2. 具有1-2年C/C++软件开发经验，基本功扎实，熟悉STL；
+                <br>3. 熟悉GUI开发，具有QT Creator开发经验的优先；
+                <br>4. 具有很强的学习能力和探索精神；
+                <br>5. 具有独立工作能力，优秀的团队合作精神以及良好的沟通能力。
+                <p class="content_title">招聘人数</p>1人
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
       <section class="cooperation ptb-140">
@@ -121,6 +145,7 @@ import icon_4 from "../assets/icon_4.svg";
 import icon_5 from "../assets/icon_5.svg";
 import icon_6 from "../assets/icon_6.svg";
 import icon_7 from "../assets/icon_7.svg";
+import icon_8 from "../assets/icon_8.svg";
 import team_1 from "../assets/team_1.png";
 import team_2 from "../assets/team_2.png";
 import team_3 from "../assets/team_3.png";
@@ -143,6 +168,32 @@ export default {
     teamIterm,
     newsCard,
     globalFooter
+  },
+  methods: {
+    newsScroll: function() {
+      const more = document.getElementById("more-news");
+      const cover = document.getElementById("cover");
+      const lt = document.getElementById("lt");
+      const rt = document.getElementById("rt");
+
+      more.classList.add("hidden-1");
+      cover.classList.add("hidden-2");
+      lt.classList.add("newsScroll");
+      rt.classList.add("newsScroll");
+    },
+
+    hireShow: function() {
+      const listIterm = document.getElementById("listIterm");
+      const hireContent = document.getElementById("hire-content");
+
+      listIterm.classList.toggle("list-iterm-open");
+
+      if (listIterm.className === "default bo-t bo-b list-iterm-open") {
+        hireContent.classList.add("content-show");
+      } else {
+        hireContent.classList.remove("content-show");
+      }
+    }
   },
   data() {
     return {
@@ -207,6 +258,13 @@ export default {
           subTitle: "SpinQ News",
           des: "",
           titleImg: icon_7,
+          isRight: false
+        },
+        {
+          title: "人才招聘",
+          subTitle: "SpinQ Hire",
+          des: "",
+          titleImg: icon_8,
           isRight: false
         }
       ],
@@ -569,9 +627,8 @@ export default {
           align-content: center;
           flex-wrap: wrap;
 
-          &::before {
+          .cover {
             z-index: 999;
-            content: "";
             position: absolute;
             bottom: 0;
             left: 0;
@@ -583,6 +640,7 @@ export default {
               #f6f9fc 65%,
               rgba(255, 255, 255, 0) 90%
             );
+            transition: all 0.3s ease;
           }
 
           .lt {
@@ -591,8 +649,8 @@ export default {
             margin-right: -20px !important;
           }
 
-          .lt,
-          .rt {
+          .newsScroll {
+            animation-delay: 0.3s;
             animation: newsScroll 40s linear infinite forwards;
           }
 
@@ -604,6 +662,18 @@ export default {
             to {
               transform: translate3d(0, 740px, 0);
             }
+          }
+
+          .hidden-1 {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+          }
+
+          .hidden-2 {
+            opacity: 0;
+            transform: translateY(20px);
+            transition-delay: 0.15s;
           }
 
           button {
@@ -624,6 +694,114 @@ export default {
               opacity: 0.85;
               transform: translateY(-2px);
               box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+            }
+          }
+        }
+      }
+    }
+
+    .hire {
+      width: 100%;
+      padding-bottom: 0 !important;
+      .container-lg {
+        @include flex-column;
+
+        .hire_list {
+          width: 100%;
+          @include flex-column {
+            align-items: center;
+          }
+          li {
+            position: relative;
+            width: 80%;
+            text-align: left;
+
+            .default {
+              z-index: 99;
+              position: relative;
+              padding: 24px 16px;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              @include flex-all-center {
+                justify-content: flex-start;
+              }
+              @include font(24px, $font-color-black-1, 400);
+
+              &:hover {
+                background-color: $gray;
+              }
+
+              h4 {
+                padding: 8px 0px;
+              }
+
+              &:before {
+                content: "";
+                display: block;
+                width: 40px;
+                height: 40px;
+                background-image: url("../assets/hire_1.svg");
+                background-size: cover;
+                margin-right: 20px;
+              }
+              &:after {
+                content: "";
+                position: absolute;
+                right: 8px;
+                top: 37px;
+                display: block;
+                width: 14px;
+                height: 14px;
+                background-image: url("../assets/hire_2.svg");
+                background-size: cover;
+                margin-right: 20px;
+              }
+            }
+
+            .content {
+              z-index: 0;
+              cursor: default;
+              opacity: 0;
+              position: absolute;
+              top: 60px;
+              padding: 40px 40px 40px 60px;
+              transition: all 0.2s ease;
+              // transform: scaleY(0.9);
+              // transform-origin: top;
+              @include font(16px, $font-color-black-2, 400) {
+                line-height: 22px;
+              }
+
+              &_title {
+                font-weight: 500px;
+                font-size: 20px;
+                color: $font-color-black-1;
+                margin: 32px 0 16px 0;
+              }
+            }
+
+            .list-iterm-open {
+              padding-bottom: 510px;
+              align-items: flex-start;
+              transition: all 0.3s ease;
+              box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.14);
+              border-color:transparent;
+              border-radius: 8px;
+
+              &:hover {
+                background-color: transparent;
+              }
+
+              h4 
+              {
+              font-weight: 500;
+              }
+            }
+
+            .content-show {
+              opacity: 1;
+              transition: all 0.3s ease;
+              // transition-delay: 0.1s;
             }
           }
         }

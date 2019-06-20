@@ -28,7 +28,7 @@ export default {
 .global-footer {
   width: 100vw;
   padding: 45px 0 18px 0;
-  background: #0e58fe;
+  background: #32325D;
   @include flex-all-center;
 
   .footer-container {

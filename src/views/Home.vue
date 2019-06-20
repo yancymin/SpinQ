@@ -701,7 +701,7 @@ export default {
         position: fixed;
         width: 100vw;
         height: 100vh;
-        z-index: 999999;
+        z-index: 99999;
         top: 0;
         left: 0;
         background-color: rgba(0, 0, 0, 0.7);
@@ -726,6 +726,7 @@ export default {
       }
 
       iframe {
+        z-index: 99999999;
         width: 80%;
         height: 80%;
       }

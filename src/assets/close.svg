@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
-    <title>close</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="close" transform="translate(-5.000000, -5.000000)" fill="#FFFFFF" fill-rule="nonzero">
-            <g id="Group-8-Copy-2" transform="translate(11.455844, 11.455844) rotate(135.000000) translate(-11.455844, -11.455844) translate(3.455844, 3.455844)">
-                <g id="Group-6">
-                    <g id="Group">
-                        <polygon id="close" points="7.33333333 7.33333333 7.33333333 0.00323269863 8.66666667 0.00323269863 8.66666667 7.33333333 16 7.33333333 16 8.66666667 8.66666667 8.66666667 8.66666667 16 7.33333333 16 7.33333333 8.66666667 9.09494702e-12 8.66666667 9.09494702e-12 7.33333333"></polygon>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>

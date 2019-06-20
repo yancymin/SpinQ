@@ -898,14 +898,16 @@ export default {
               &:after {
                 content: "";
                 position: absolute;
-                right: 8px;
-                top: 37px;
+                right: 4px;
+                top: 34px;
                 display: block;
-                width: 14px;
-                height: 14px;
+                width:22px;
+                height: 22px;
                 background-image: url("../assets/hire_2.svg");
                 background-size: cover;
                 margin-right: 20px;
+                transform: rotate(-45deg);
+                transition: all 0.3s ease;
               }
             }
 
@@ -935,9 +937,13 @@ export default {
               padding-bottom: 510px;
               align-items: flex-start;
               transition: all 0.3s ease;
-              box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.14);
+              box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.14), 0 -1px 2px rgba(0,0,0,0.1);
               border-color: transparent;
               border-radius: 8px;
+
+              &:after {
+                transform: rotate(0);
+              }
 
               &:hover {
                 background-color: transparent;

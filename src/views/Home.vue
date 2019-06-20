@@ -531,7 +531,7 @@ export default {
       img {
         position: relative;
         left: -80px;
-        height: 470px;
+        height: 420px;
       }
     }
     .hardware_2 {

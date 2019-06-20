@@ -30,6 +30,10 @@ $font-color-black-3: rgba(82, 95, 127, 0.4);
     @content;
 }
 
+img {
+    pointer-events: none;
+}
+
 .pb-32 {
     padding-bottom: 32px;
 }

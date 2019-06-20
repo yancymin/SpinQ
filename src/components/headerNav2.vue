@@ -185,4 +185,18 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 780px)  {
+    .headerNav2 {
+      .left {
+          ul {
+        display: none !important;
+      }
+      }
+
+    .container-lg {
+          justify-content: space-between !important;
+    }
+    }
+}
 </style>

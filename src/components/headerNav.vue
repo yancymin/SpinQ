@@ -169,4 +169,14 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 780px)  {
+    .headerNav {
+      .left {
+          ul {
+        display: none;
+      }
+      }
+    }
+}
 </style>

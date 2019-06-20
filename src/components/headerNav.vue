@@ -114,7 +114,7 @@ export default {
     border: 1px solid transparent;
     cursor: pointer;
     border-radius: 3px;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
 
     &:hover {
       border: 1px solid rgba(255, 255, 255, 0.4);
@@ -147,6 +147,8 @@ export default {
       text-align: left;
       border-radius: 4px;
       box-shadow: 0px 16px 40px rgba(50, 50, 93, 0.14);
+      transition: all 0.2s ease-out;
+      transition-delay: 0.18s;
 
       li {
         cursor: pointer;

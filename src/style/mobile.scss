@@ -1,0 +1,200 @@
+@media screen and (max-width: 1160px) {
+    #app {
+
+        .ptb-140 {
+            padding: 80px 0;
+        }
+
+        .container-lg {
+            width: 90%;
+            justify-content: center;
+        }
+
+        .header_cards {
+            justify-content: center;
+            flex-direction: column;
+
+            .headerCard {
+                margin-bottom: 16px;
+                max-width: 80%;
+            }
+        }
+
+        main {
+            .hardware_1 {
+                .container-lg {
+                    justify-content: center;
+
+                    >img {
+                        width: 80%;
+                        height: auto;
+                        order: 2;
+                        margin-top: 60px;
+                    }
+                }
+            }
+
+            .hardware_2 {
+                .container-lg {
+                    justify-content: center;
+
+                    >img {
+                        width: 80%;
+                        height: auto;
+                        right: 0;
+                        margin-top: 60px;
+                    }
+                }
+            }
+
+            .software_1 {
+                .container-lg {
+                    justify-content: center;
+
+                    >img {
+                        width: 100%;
+                        height: auto;
+                        right: 0;
+                        margin-top: 60px;
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            .software_2 {
+                .video {
+                    top: -10px;
+                    left: 2%;
+                }
+
+                .right {
+                    margin-top: 100px;
+
+                    li {
+                        width: 100%;
+                        justify-content: flex-start;
+
+                        &:before {
+                            margin-right: 5%;
+                        }
+                    }
+                }
+            }
+
+            .team {
+
+                // box-shadow: 0px 16px 40px rgba(50, 50, 93, 0.14);
+                .container-lg {
+                    .teamIterms {
+
+                        .teamIterm {
+
+                            &:nth-of-type(1),
+                            &:nth-of-type(2) {
+                                .job-title {
+                                    margin-left: -4px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .default-view img {
+                    // transform: scale(1.05);
+                    filter: contrast(0.92);
+                }
+
+                .text-wrap {
+
+
+                    h3 {
+                        transform: translateY(-45px) translateX(-21px) scale(0.8);
+                    }
+
+                    span {
+                        transform: translateY(-60px) translateX(-22px) scale(0.8);
+                    }
+
+                    .des {
+                        opacity: 1 !important;
+                        transform: translateY(0) !important;
+                    }
+                }
+            }
+
+            .news {
+                .container-lg {
+                    flex-direction: column;
+                    width: 100%;
+                    padding: 80px 0 0 0;
+
+                    .common-title {
+                        left: 0;
+                    }
+
+                    .news_scroll-wrap {
+                        flex-wrap: nowrap;
+
+                        .lt,
+                        .rt {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+
+            .hire {
+                .container-lg {
+                    li {
+                        width: 100%;
+
+                        .content {
+                            padding: 20px;
+                        }
+
+                        .list-iterm-open {
+                            padding-bottom: 580px;
+                        }
+                    }
+                }
+            }
+
+            .cooperation {
+                img {
+                    // width: 90%;
+
+                }
+            }
+
+        }
+        
+    }
+}
+
+@media screen and (max-width: 420px) {
+        #app {
+            .global-footer {
+                .footer-container {
+                  margin: 0 4%;
+              }
+
+              .top {
+                  padding-bottom:32px; 
+                  flex-direction: column;
+                  align-items: flex-start;
+
+                  .wechat, .zhihu {
+                      margin-top: 140px;
+                  }
+
+                  .wechat::before {
+                  opacity: 1;
+                          left: 0px;
+                    margin-top: -4px;
+                  }
+              }
+          }
+        }
+}

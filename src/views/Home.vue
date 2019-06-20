@@ -64,7 +64,10 @@
             ></iframe>
           </div>
           <div class="video">
-            <div class="play" @click="play()"></div>
+              <img src="../assets/news_4.jpg" alt="">
+
+            <div class="play" @click="play()">
+            </div>
           </div>
           <div class="right">
             <commonTitle :titles="titles[4]" class="pb-32 bo-b"/>
@@ -628,16 +631,25 @@ export default {
       .video {
         position: relative;
         top: 40px;
-        width: 750px;
-        height: 500px;
-        background-color: #0249ff;
-        background-image: url("../assets/news_4.jpg");
-        background-size: 101%;
+        // width: 750px;
+        // height: 500px;
+   
+        // background-image: url("../assets/news_4.jpg");
+        // background-size: 101%;
+
         border-radius: 8px;
+        overflow: hidden;
         transform: perspective(1000px) rotate3d(-58, -235, 54, -21deg);
         box-shadow: -27.1px 62.5px 125px -25px rgba(50, 50, 93, 0.3),
           -16.2px 37.5px 75px -37.5px rgba(16, 33, 80, 0.3);
         @include flex-all-center;
+
+        img {
+          position: relative;
+          right: -2px;
+          width: 750px;
+          max-width: 100%;
+        }
 
         &:hover {
           .play {
@@ -647,7 +659,7 @@ export default {
 
         .play {
           cursor: pointer;
-          position: relative;
+          position: absolute;
           width: 80px;
           height: 80px;
           border-radius: 100%;

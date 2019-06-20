@@ -34,6 +34,26 @@ img {
     pointer-events: none;
 }
 
+html::-webkit-scrollbar {
+    width: 0 !important
+}
+
+html {
+    -ms-overflow-style: none;
+}
+
+html {
+    overflow: -moz-scrollbars-none;
+}
+
+html::-webkit-scrollbar {
+    display: none
+}
+
+html::-webkit-scrollbar {
+    width: 0px
+}
+
 .pb-32 {
     padding-bottom: 32px;
 }

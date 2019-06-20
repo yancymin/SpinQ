@@ -7,6 +7,7 @@
 <style lang="scss">
 @import "../src/style/global.scss";
 @import "../src/style/reset.css";
+@import "../src/style/mobile.scss";
 
 #app {
   width: 100vw;

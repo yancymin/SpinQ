@@ -211,12 +211,11 @@ export default {
 
     close: function() {
       const player = document.getElementById("player");
-
-      player.style.display = "none";
+      player.style.visibility = "hidden";
     },
 
     play: function() {
-        player.style.display = "flex"
+        player.style.visibility = "visible"
     }
   },
   data() {
@@ -661,8 +660,7 @@ export default {
         }
       }
       .player {
-        // visibility: hidden;
-        display: none;
+        visibility: hidden;
         position: fixed;
         width: 100vw;
         height: 100vh;
@@ -670,7 +668,6 @@ export default {
         top: 0;
         left: 0;
         background-color: rgba(0, 0, 0, 0.7);
-
         @include flex-all-center;
 
         i {

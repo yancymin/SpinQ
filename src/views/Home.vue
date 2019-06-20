@@ -63,12 +63,36 @@
           </div>
         </div>
       </section>
-      <section class="team ptb-140 bo-b">
+      <section class="team ptb-140">
         <div class="container-lg">
           <commonTitle :titles="titles[5]"/>
           <h2>科学顾问</h2>
           <div class="teamIterms">
             <teamIterm v-for="(item, index) in teams" :key="index" :teams="item"/>
+          </div>
+        </div>
+      </section>
+      <section class="news">
+        <div class="container-lg">
+          <commonTitle :titles="titles[6]"/>
+          <div class="news_scroll-wrap">
+            <div class="lt">
+              <newsCard v-for="(item, index) in newsCards[0].left" :key="index" :newsCard="item"/>
+              <newsCard
+                v-for="(item, index) in newsCards[0].left"
+                :key="index + '-label'"
+                :newsCard="item"
+              />
+            </div>
+            <div class="rt">
+              <newsCard v-for="(item, index) in newsCards[0].right" :key="index" :newsCard="item"/>
+              <newsCard
+                v-for="(item, index) in newsCards[0].right"
+                :key="index + '-label'"
+                :newsCard="item"
+              />
+            </div>
+            <button class="more-news">更多报道</button>
           </div>
         </div>
       </section>
@@ -88,6 +112,7 @@ import headerMotion from "../components/headerMotion.vue";
 import headerCard from "../components/headerCard.vue";
 import commonTitle from "../components/commonTitle.vue";
 import teamIterm from "../components/teamIterm.vue";
+import newsCard from "../components/newsCard.vue";
 import globalFooter from "../components/globalFooter.vue";
 import icon_1 from "../assets/icon_1.svg";
 import icon_2 from "../assets/icon_2.svg";
@@ -102,6 +127,11 @@ import team_3 from "../assets/team_3.png";
 import team_4 from "../assets/team_4.png";
 import team_5 from "../assets/team_5.png";
 import team_6 from "../assets/team_6.png";
+import news_1 from "../assets/news_1.jpg";
+import news_2 from "../assets/news_2.jpg";
+import news_3 from "../assets/news_3.jpg";
+import news_4 from "../assets/news_4.jpg";
+import news_5 from "../assets/news_5.jpg";
 
 export default {
   name: "home",
@@ -111,6 +141,7 @@ export default {
     headerCard,
     commonTitle,
     teamIterm,
+    newsCard,
     globalFooter
   },
   data() {
@@ -170,6 +201,13 @@ export default {
           des: "",
           titleImg: icon_6,
           isRight: false
+        },
+        {
+          title: "媒体报道",
+          subTitle: "SpinQ News",
+          des: "",
+          titleImg: icon_7,
+          isRight: false
         }
       ],
       teams: [
@@ -213,6 +251,66 @@ export default {
           des:
             "南方科技大学量子计算研究所副所长，美国马里兰大学博士，长期从事量子信息和量子材料方面的研究。",
           img: team_6
+        }
+      ],
+      newsCards: [
+        {
+          left: [
+            {
+              newsTitle: "深圳市科创委领导一行了解小型仪器研发进展",
+              date: "2019/05/09",
+              bgImg: news_1
+            },
+            {
+              newsTitle: "量旋科技于南科大开放日展示桌面型量子计算教学仪器",
+              date: "2019/04/13",
+              bgImg: news_2
+            },
+            {
+              newsTitle: "量旋科技发布桌面型量子计算教学仪器",
+              date: "2019/04/03",
+              bgImg: news_3
+            }
+          ],
+          right: [
+            {
+              newsTitle: "量旋科技发布首款开放控制层的核磁共振量子云平台",
+              date: "2018/11/10",
+              bgImg: news_4
+            },
+            {
+              newsTitle:
+                "深圳量旋科技（SpinQ）正式注册成立 致力量子计算商业化和普及化",
+              date: "2018/08/27",
+              bgImg: news_5
+            }
+          ]
+        },
+        {
+          newsTitle: "深圳市科创委领导一行了解小型仪器研发进展",
+          date: "2019/05/09",
+          bgImg: news_1
+        },
+        {
+          newsTitle: "量旋科技于南科大开放日展示桌面型量子计算教学仪器",
+          date: "2019/04/13",
+          bgImg: news_1
+        },
+        {
+          newsTitle: "量旋科技发布桌面型量子计算教学仪器",
+          date: "2019/04/03",
+          bgImg: news_1
+        },
+        {
+          newsTitle: "量旋科技发布首款开放控制层的核磁共振量子云平台",
+          date: "2018/11/10",
+          bgImg: news_1
+        },
+        {
+          newsTitle:
+            "深圳量旋科技（SpinQ）正式注册成立 致力量子计算商业化和普及化",
+          date: "2018/08/27",
+          bgImg: news_1
         }
       ]
     };
@@ -438,6 +536,95 @@ export default {
           width: 100%;
           @include flex-all-center {
             flex-wrap: wrap;
+          }
+        }
+      }
+    }
+
+    .news {
+      overflow: hidden;
+      .container-lg {
+        position: relative;
+        max-height: 740px;
+        max-width: 1080px;
+        padding: 0 40px 0 148px;
+        background-color: $gray;
+        border-radius: 8px;
+        @include flex-all-center {
+          justify-content: space-between;
+        }
+
+        .common-title {
+          position: relative;
+          left: 76px;
+        }
+
+        .news_scroll-wrap {
+          position: relative;
+          height: 100%;
+          max-height: 740px;
+          overflow-y: hidden;
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          flex-wrap: wrap;
+
+          &::before {
+            z-index: 999;
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 260px;
+            background: linear-gradient(
+              0,
+              #f6f9fc 65%,
+              rgba(255, 255, 255, 0) 90%
+            );
+          }
+
+          .lt {
+            position: relative;
+            top: -100px;
+            margin-right: -20px !important;
+          }
+
+          .lt,
+          .rt {
+            animation: newsScroll 40s linear infinite forwards;
+          }
+
+          @keyframes newsScroll {
+            0% {
+              transform: translate3d(0, 0, 0);
+            }
+
+            to {
+              transform: translate3d(0, 740px, 0);
+            }
+          }
+
+          button {
+            z-index: 1000;
+            position: absolute;
+            bottom: 60px;
+            left: 40%;
+            width: 180px;
+            height: 45px;
+            border: none;
+            background-color: $blue;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            @include font(16px, white, 600);
+
+            &:hover {
+              opacity: 0.85;
+              transform: translateY(-2px);
+              box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+            }
           }
         }
       }

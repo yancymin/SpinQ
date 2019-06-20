@@ -50,8 +50,8 @@
 
 <script>
 export default {
-  name: "headerNav",
-  props: {}
+  name: 'headerNav',
+  props: {},
 };
 </script>
 

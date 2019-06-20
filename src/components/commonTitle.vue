@@ -14,8 +14,8 @@
 
 <script>
 export default {
-  name: "commonTitle",
-  props: ["titleImg", "title", "subTitle", "des", "titles", "isRight"]
+  name: 'commonTitle',
+  props: ['titleImg', 'title', 'subTitle', 'des', 'titles', 'isRight'],
 };
 </script>
 
@@ -75,5 +75,3 @@ export default {
   }
 }
 </style>
-
-

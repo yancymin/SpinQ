@@ -7,8 +7,8 @@
 
 <script>
 export default {
-  name: "newsCard",
-  props: ["newsCard"]
+  name: 'newsCard',
+  props: ['newsCard'],
 };
 </script>
 

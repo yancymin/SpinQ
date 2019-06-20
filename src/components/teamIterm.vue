@@ -15,8 +15,8 @@
 
 <script>
 export default {
-  name: "teamIterm",
-  props: ["teams"]
+  name: 'teamIterm',
+  props: ['teams'],
 };
 </script>
 

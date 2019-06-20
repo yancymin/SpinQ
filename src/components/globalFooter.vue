@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: "globalFooter"
+  name: 'globalFooter',
 };
 </script>
 
@@ -85,7 +85,7 @@ export default {
                 box-shadow: 0px 2px 10px rgba(50, 50, 93, 0.25);
                 transition: all 0.25s ease;
         }
-        
+
       }
 
       .zhihu {
@@ -122,5 +122,3 @@ export default {
   }
 }
 </style>
-
-

@@ -10,8 +10,8 @@
 
 <script>
 export default {
-  name: "headerCard",
-  props: ["title", "subTitle", "iconSrc", "headerCard"]
+  name: 'headerCard',
+  props: ['title', 'subTitle', 'iconSrc', 'headerCard'],
 };
 </script>
 
@@ -71,4 +71,3 @@ export default {
   }
 }
 </style>
-

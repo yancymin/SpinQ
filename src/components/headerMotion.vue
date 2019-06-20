@@ -33,7 +33,7 @@
 
 <script>
 export default {
-  name: "headerMotion"
+  name: 'headerMotion',
 };
 </script>
 

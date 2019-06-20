@@ -23,7 +23,7 @@
       <section class="ptb-140 bo-b">
         <commonTitle :titles="titles[0]"/>
       </section>
-      <section class="hardware_1 ptb-140 bo-b">
+      <section class="hardware_1 ptb-140 bo-b" id="hardware-anchor">
         <div class="container-lg">
           <img src="../assets/hardware_1.png" alt>
           <commonTitle :titles="titles[1]"/>
@@ -49,9 +49,22 @@
           <img src="../assets/software_1.png" alt>
         </div>
       </section>
-      <section class="software_2 ptb-80">
+      <section class="software_2 ptb-80" id="software-anchor">
         <div class="container-lg">
-          <div class="video"></div>
+          <div class="player" id="player">
+            <i class="close" id="close" @click="close()"></i>
+            <iframe
+              src="//player.bilibili.com/player.html?aid=52949845&cid=92645564&page=1"
+              scrolling="no"
+              border="0"
+              frameborder="no"
+              framespacing="0"
+              allowfullscreen="true"
+            ></iframe>
+          </div>
+          <div class="video">
+            <div class="play" @click="play()"></div>
+          </div>
           <div class="right">
             <commonTitle :titles="titles[4]" class="pb-32 bo-b"/>
             <ul>
@@ -63,7 +76,7 @@
           </div>
         </div>
       </section>
-      <section class="team ptb-140">
+      <section class="team ptb-140" id="team-anchor">
         <div class="container-lg">
           <commonTitle :titles="titles[5]"/>
           <h2>科学顾问</h2>
@@ -110,8 +123,8 @@
                 <br>2. 负责撰写需求分析说明书、详细设计、使用手册等相关技术文档；
                 <br>3. 参与公司研发的自有算法的集成。
                 <p class="content_title">岗位要求</p>1. 电子、自动化、软件工程、计算机相关专业本科及以上学历；
-                <br>2. 具有1-2年C/C++软件开发经验，基本功扎实，熟悉STL；
-                <br>3. 熟悉GUI开发，具有QT Creator开发经验的优先；
+                <br>2. 具有 1-2 年 C/C++ 软件开发经验，基本功扎实，熟悉 STL；
+                <br>3. 熟悉 GUI 开发，具有 QT Creator 开发经验的优先；
                 <br>4. 具有很强的学习能力和探索精神；
                 <br>5. 具有独立工作能力，优秀的团队合作精神以及良好的沟通能力。
                 <p class="content_title">招聘人数</p>1人
@@ -122,6 +135,7 @@
       </section>
       <section class="cooperation ptb-140">
         <div class="container-lg">
+          <span class="cooperation_title">战略合作伙伴</span>
           <img src="../assets/cooperation.png" alt>
         </div>
       </section>
@@ -193,6 +207,16 @@ export default {
       } else {
         hireContent.classList.remove("content-show");
       }
+    },
+
+    close: function() {
+      const player = document.getElementById("player");
+
+      player.style.display = "none";
+    },
+
+    play: function() {
+        player.style.display = "flex"
     }
   },
   data() {
@@ -201,10 +225,21 @@ export default {
         {
           title: "桌面型量子计算机",
           subTitle: "SpinQ Hardware",
-          iconSrc: icon_1
+          iconSrc: icon_1,
+          id: "#hardware-anchor"
         },
-        { title: "软件介绍", subTitle: "SpinQ software", iconSrc: icon_4 },
-        { title: "SpinQ 团队成员", subTitle: "SpinQ Team", iconSrc: icon_6 }
+        {
+          title: "软件介绍",
+          subTitle: "SpinQ software",
+          iconSrc: icon_4,
+          id: "#software-anchor"
+        },
+        {
+          title: "SpinQ 团队成员",
+          subTitle: "SpinQ Team",
+          iconSrc: icon_6,
+          id: "#team-anchor"
+        }
       ],
       titles: [
         {
@@ -567,15 +602,92 @@ export default {
         }
       }
       .video {
+        position: relative;
+        top: 40px;
         width: 750px;
-        height: 550px;
+        height: 500px;
         background-color: #0249ff;
-        background-image: url("../assets/test.webp");
-        background-size: 100% auto;
+        background-image: url("../assets/news_4.jpg");
+        background-size: 101%;
         border-radius: 8px;
-        transform: rotate3d(-2.5, -0.866, 0, 24deg) rotateZ(-5deg);
-        box-shadow: -27.1px 62.5px 125px -25px rgba(50, 50, 93, 0.5),
-          -16.2px 37.5px 75px -37.5px rgba(0, 0, 0, 0.6);
+        transform: perspective(1000px) rotate3d(-58, -235, 54, -21deg);
+        box-shadow: -27.1px 62.5px 125px -25px rgba(50, 50, 93, 0.3),
+          -16.2px 37.5px 75px -37.5px rgba(16, 33, 80, 0.3);
+        @include flex-all-center;
+
+        &:hover {
+          .play {
+            transform: scale(1.1);
+          }
+        }
+
+        .play {
+          cursor: pointer;
+          position: relative;
+          width: 80px;
+          height: 80px;
+          border-radius: 100%;
+          border: 1px solid #eee;
+          background-color: white;
+          background-image: url("../assets/play.svg");
+          background-size: 30%;
+          background-repeat: no-repeat;
+          background-position: 55% center;
+          box-shadow: 0px 14px 34px rgba(50, 50, 93, 0.14);
+          transition: all 0.2s ease-out;
+
+          &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            animation: ripple 1s linear infinite;
+          }
+
+          $shadowColor: #26cadd;
+          $shadowColor2: #fff;
+          @keyframes ripple {
+            0% {
+              box-shadow: 0 0 0 0 rgba($shadowColor, 0),
+                0 0 0 20px rgba($shadowColor, 0.2);
+            }
+            100% {
+              box-shadow: 0 0 0 20px rgba($shadowColor, 0.2),
+                0 0 0 40px rgba($shadowColor, 0);
+            }
+          }
+        }
+      }
+      .player {
+        // visibility: hidden;
+        display: none;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: 999999;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+
+        @include flex-all-center;
+
+        i {
+          cursor: pointer;
+          position: absolute;
+          top: 40px;
+          right: 40px;
+          width: 32px;
+          height: 32px;
+          background-image: url("../assets/close.svg");
+          background-size: cover;
+        }
+      }
+
+      iframe {
+        width: 80%;
+        height: 80%;
       }
     }
 
@@ -785,16 +897,15 @@ export default {
               align-items: flex-start;
               transition: all 0.3s ease;
               box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.14);
-              border-color:transparent;
+              border-color: transparent;
               border-radius: 8px;
 
               &:hover {
                 background-color: transparent;
               }
 
-              h4 
-              {
-              font-weight: 500;
+              h4 {
+                font-weight: 500;
               }
             }
 
@@ -812,7 +923,18 @@ export default {
       width: 100%;
 
       .container-lg {
-        @include flex-all-center;
+        position: relative;
+        @include flex-all-center {
+          flex-direction: column;
+        }
+      }
+
+      span {
+        position: absolute;
+        top: -14px;
+        padding: 8px 16px;
+        background-color: white;
+        @include font(18px, $font-color-black-2, 400);
       }
       img {
         height: 150px;

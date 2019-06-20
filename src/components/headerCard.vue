@@ -1,8 +1,10 @@
 <template>
   <div class="headerCard">
-    <img :src="headerCard.iconSrc" alt class="icon">
-    <span class="sub-title">{{headerCard.subTitle}}</span>
-    <h2>{{headerCard.title}}</h2>
+    <a :href="headerCard.id">
+      <img :src="headerCard.iconSrc" alt class="icon">
+      <span class="sub-title">{{headerCard.subTitle}}</span>
+      <h2>{{headerCard.title}}</h2>
+    </a>
   </div>
 </template>
 
@@ -14,7 +16,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../style/global.scss"; 
+@import "../style/global.scss";
 
 .headerCard {
   position: relative;
@@ -27,13 +29,13 @@ export default {
   cursor: pointer;
   transition: all 0.3s ease;
 
-&:hover {
-  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.06);
-  transform: translateY(-6px);
+  &:hover {
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.06);
+    transform: translateY(-6px);
 
-  &::before {
-    transform: translateX(8px);
-  }
+    &::before {
+      transform: translateX(8px);
+    }
   }
 
   &::before {
@@ -46,25 +48,26 @@ export default {
     height: 28px;
     background-image: url("../assets/card_arrow.svg");
     background-size: 28px 28px;
-  transition: all 0.2s ease-out;
-
-  }
-  @include flex-column {
-    align-items: flex-start;
+    transition: all 0.2s ease-out;
   }
 
-  h2 {
-    @include font(28px, $font-color-black-1, 400);
-  }
+  a {
+      @include flex-column {
+        align-items: flex-start;
+      }
+    h2 {
+      @include font(28px, $font-color-black-1, 400);
+    }
 
-  span {
-     text-transform: uppercase;
-    margin-bottom: 10px;
-    @include font(18px, $font-color-black-3, 600);
-  }
+    span {
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      @include font(18px, $font-color-black-3, 600);
+    }
 
-  .icon {
-    margin-bottom: 24px;
+    .icon {
+      margin-bottom: 24px;
+    }
   }
 }
 </style>

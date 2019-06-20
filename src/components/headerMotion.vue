@@ -1,7 +1,7 @@
 <template>
   <div class="hero">
     <div class="wrapper">
-      <div class="container">
+      <div class="container" id="header-motion-container">
         <div class="sphere">
           <div class="ring"></div>
           <div class="ring"></div>

@@ -176,6 +176,11 @@
 
 @media screen and (max-width: 420px) {
         #app {
+
+            #header-motion-container {
+                width: 360px;
+                height: 360px;
+            }
             .common-title {
                 width: 95%;
 
@@ -194,12 +199,14 @@
                 }
             }
             .header {
-                // height: 90vh;
+                height: 86vh;
                     .text-wrap {
                         .text {
                             h1 {
                                 font-size: 40px;
                                 line-height: 56px;
+                    width: 96%;
+
                             }
                             p {
                                 width: 80%;

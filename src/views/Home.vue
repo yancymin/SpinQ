@@ -13,7 +13,8 @@
         <headerMotion/>
       </div>
       <div class="header_wrap">
-        <headerNav/>
+        <headerNav id="headerNav"/>
+        <headerNav2 id="headerNav2"/>
       </div>
     </div>
     <div class="header_cards">
@@ -85,7 +86,7 @@
           </div>
         </div>
       </section>
-      <section class="news">
+      <section class="news" id="news-anchor">
         <div class="container-lg">
           <commonTitle :titles="titles[6]"/>
           <div class="news_scroll-wrap" id="news_scroll-wrap">
@@ -110,7 +111,7 @@
           </div>
         </div>
       </section>
-      <section class="hire ptb-140">
+      <section class="hire ptb-140" id="hire-anchor">
         <div class="container-lg">
           <commonTitle :titles="titles[7]" class="mb-80"/>
           <ul class="hire_list">
@@ -146,6 +147,7 @@
 
 <script>
 import headerNav from "../components/headerNav.vue";
+import headerNav2 from "../components/headerNav2.vue";
 import headerMotion from "../components/headerMotion.vue";
 import headerCard from "../components/headerCard.vue";
 import commonTitle from "../components/commonTitle.vue";
@@ -176,12 +178,26 @@ export default {
   name: "home",
   components: {
     headerNav,
+    headerNav2,
     headerMotion,
     headerCard,
     commonTitle,
     teamIterm,
     newsCard,
     globalFooter
+  },
+  mounted() {
+    const header = document.querySelector("#headerNav");
+    const header2 = document.querySelector("#headerNav2");
+    const headerOffset = header.offsetTop + header.offsetHeight + 70;
+
+    window.addEventListener("scroll", e => {
+      if (window.scrollY >= headerOffset) {
+        header2.classList.add("headerChange");
+      } else {
+        header2.classList.remove("headerChange");
+      }
+    });
   },
   methods: {
     newsScroll: function() {
@@ -413,6 +429,11 @@ export default {
 <style lang="scss" scoped>
 @import "../style/global.scss";
 
+.headerChange {
+  transform: translateY(0) !important;
+  visibility: visible !important;
+}
+
 .home {
   width: 100%;
   @include flex-all-center {
@@ -508,11 +529,15 @@ export default {
 
     .hardware_1 {
       img {
+        position: relative;
+        left: -80px;
         height: 470px;
       }
     }
     .hardware_2 {
       img {
+        position: relative;
+        right: -80px;
         height: 440px;
       }
     }
@@ -709,6 +734,17 @@ export default {
           width: 100%;
           @include flex-all-center {
             flex-wrap: wrap;
+          }
+
+          .teamIterm {
+            &:hover {
+              &:nth-of-type(1),
+              &:nth-of-type(2) {
+                ::v-deep .job-title {
+                  margin-left: -4px;
+                }
+              }
+            }
           }
         }
       }

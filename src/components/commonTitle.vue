@@ -41,6 +41,12 @@ export default {
 .common-title {
   max-width: 440px;
 
+  img {
+    width: 88px;
+    height: 88px;
+    align-self: center;
+  }
+
   div {
     &:first-child {
       @include flex-column;

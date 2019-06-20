@@ -80,7 +80,7 @@ export default {
       height: 160px;
       border-radius: 80px;
       overflow: hidden;
-  filter: hue-rotate(9deg) saturate(0.2);
+      filter: hue-rotate(0deg) saturate(0.14);
       transition: all 0.3s ease;
     }
 

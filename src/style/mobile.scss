@@ -84,6 +84,8 @@
 
             .team {
 
+        
+
                 // box-shadow: 0px 16px 40px rgba(50, 50, 93, 0.14);
                 .container-lg {
                     .teamIterms {
@@ -128,12 +130,29 @@
                     flex-direction: column;
                     width: 100%;
                     padding: 80px 0 0 0;
+                    height: 680px;;
 
                     .common-title {
                         left: 0;
+                        top: -30%;
+                    }
+
+                    .scroll-x {
+                        display: flex !important;
+                        animation: scrollx 10s linear infinite;
+                        @keyframes scrollx {
+                            0% {
+                              transform: translate3d(0, 0, 0);
+                            }
+                
+                            to {
+                              transform: translate3d(820px,0 , 0);
+                            }
+                          }
                     }
 
                     .news_scroll-wrap {
+                        display: none;
                         flex-wrap: nowrap;
 
                         .lt,

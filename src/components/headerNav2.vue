@@ -62,7 +62,8 @@ export default {
 @import "../style/global.scss";
 
 .headerNav2 {
-  z-index: 999999;
+  // transform:translateZ(5000px);
+  z-index: 9999;
   position: fixed;
   top: 0;
   left: 0;
@@ -155,7 +156,6 @@ export default {
       }
       .lang {
         opacity: 0;
-        z-index: 10000;
         position: absolute;
         top: 40px;
         width: 148px;
@@ -199,4 +199,14 @@ export default {
     }
     }
 }
+
+@media screen and (max-width: 1160px) {
+    .headerNav2 {
+    
+
+    .container-lg {
+          justify-content: space-between !important;
+    }
+    }
+} 
 </style>

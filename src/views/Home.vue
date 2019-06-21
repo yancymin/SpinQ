@@ -51,23 +51,22 @@
         </div>
       </section>
       <section class="software_2 ptb-80" id="software-anchor">
+        <div class="player" id="player">
+          <i class="close" id="close" @click="close()"></i>
+          <iframe
+            src="//player.bilibili.com/player.html?aid=52949845&cid=92645564&page=1"
+            scrolling="no"
+            border="0"
+            frameborder="no"
+            framespacing="0"
+            allowfullscreen="true"
+          ></iframe>
+        </div>
         <div class="container-lg">
-          <div class="player" id="player">
-            <i class="close" id="close" @click="close()"></i>
-            <iframe
-              src="//player.bilibili.com/player.html?aid=52949845&cid=92645564&page=1"
-              scrolling="no"
-              border="0"
-              frameborder="no"
-              framespacing="0"
-              allowfullscreen="true"
-            ></iframe>
-          </div>
           <div class="video">
-              <img src="../assets/news_4.jpg" alt="">
+            <img src="../assets/news_4.jpg" alt>
 
-            <div class="play" @click="play()">
-            </div>
+            <div class="play" @click="play()"></div>
           </div>
           <div class="right">
             <commonTitle :titles="titles[4]" class="pb-32 bo-b"/>
@@ -112,6 +111,10 @@
             </div>
             <button class="more-news" @click="newsScroll()" id="more-news">更多报道</button>
           </div>
+          <div class="scroll-x">
+            <newsCard v-for="(item, index) in newsCards[0].y" :key="index" :newsCard="item"/>
+            <newsCard v-for="(item, index) in newsCards[0].y"    :key="index + '-label'" :newsCard="item"/>
+          </div>
         </div>
       </section>
       <section class="hire ptb-140" id="hire-anchor">
@@ -149,36 +152,36 @@
 </template>
 
 <script>
-import headerNav from '../components/headerNav.vue';
-import headerNav2 from '../components/headerNav2.vue';
-import headerMotion from '../components/headerMotion.vue';
-import headerCard from '../components/headerCard.vue';
-import commonTitle from '../components/commonTitle.vue';
-import teamIterm from '../components/teamIterm.vue';
-import newsCard from '../components/newsCard.vue';
-import globalFooter from '../components/globalFooter.vue';
-import icon_1 from '../assets/icon_1.svg';
-import icon_2 from '../assets/icon_2.svg';
-import icon_3 from '../assets/icon_3.svg';
-import icon_4 from '../assets/icon_4.svg';
-import icon_5 from '../assets/icon_5.svg';
-import icon_6 from '../assets/icon_6.svg';
-import icon_7 from '../assets/icon_7.svg';
-import icon_8 from '../assets/icon_8.svg';
-import team_1 from '../assets/team_1.png';
-import team_2 from '../assets/team_2.png';
-import team_3 from '../assets/team_3.png';
-import team_4 from '../assets/team_4.png';
-import team_5 from '../assets/team_5.png';
-import team_6 from '../assets/team_6.png';
-import news_1 from '../assets/news_1.jpg';
-import news_2 from '../assets/news_2.jpg';
-import news_3 from '../assets/news_3.jpg';
-import news_4 from '../assets/news_4.jpg';
-import news_5 from '../assets/news_5.jpg';
+import headerNav from "../components/headerNav.vue";
+import headerNav2 from "../components/headerNav2.vue";
+import headerMotion from "../components/headerMotion.vue";
+import headerCard from "../components/headerCard.vue";
+import commonTitle from "../components/commonTitle.vue";
+import teamIterm from "../components/teamIterm.vue";
+import newsCard from "../components/newsCard.vue";
+import globalFooter from "../components/globalFooter.vue";
+import icon_1 from "../assets/icon_1.svg";
+import icon_2 from "../assets/icon_2.svg";
+import icon_3 from "../assets/icon_3.svg";
+import icon_4 from "../assets/icon_4.svg";
+import icon_5 from "../assets/icon_5.svg";
+import icon_6 from "../assets/icon_6.svg";
+import icon_7 from "../assets/icon_7.svg";
+import icon_8 from "../assets/icon_8.svg";
+import team_1 from "../assets/team_1.png";
+import team_2 from "../assets/team_2.png";
+import team_3 from "../assets/team_3.png";
+import team_4 from "../assets/team_4.png";
+import team_5 from "../assets/team_5.png";
+import team_6 from "../assets/team_6.png";
+import news_1 from "../assets/news_1.jpg";
+import news_2 from "../assets/news_2.jpg";
+import news_3 from "../assets/news_3.jpg";
+import news_4 from "../assets/news_4.jpg";
+import news_5 from "../assets/news_5.jpg";
 
 export default {
-  name: 'home',
+  name: "home",
   components: {
     headerNav,
     headerNav2,
@@ -187,245 +190,247 @@ export default {
     commonTitle,
     teamIterm,
     newsCard,
-    globalFooter,
+    globalFooter
   },
   mounted() {
-    const header = document.querySelector('#headerNav');
-    const header2 = document.querySelector('#headerNav2');
+    const header = document.querySelector("#headerNav");
+    const header2 = document.querySelector("#headerNav2");
     const headerOffset = header.offsetTop + header.offsetHeight + 70;
 
-    window.addEventListener('scroll', (e) => {
+    window.addEventListener("scroll", e => {
       if (window.scrollY >= headerOffset) {
-        header2.classList.add('headerChange');
+        header2.classList.add("headerChange");
       } else {
-        header2.classList.remove('headerChange');
+        header2.classList.remove("headerChange");
       }
     });
   },
   methods: {
     newsScroll() {
-      const more = document.getElementById('more-news');
-      const cover = document.getElementById('cover');
-      const lt = document.getElementById('lt');
-      const rt = document.getElementById('rt');
+      const more = document.getElementById("more-news");
+      const cover = document.getElementById("cover");
+      const lt = document.getElementById("lt");
+      const rt = document.getElementById("rt");
 
-      more.classList.add('hidden-1');
-      cover.classList.add('hidden-2');
-      lt.classList.add('newsScroll');
-      rt.classList.add('newsScroll');
+      more.classList.add("hidden-1");
+      cover.classList.add("hidden-2");
+      lt.classList.add("newsScroll");
+      rt.classList.add("newsScroll");
     },
 
     hireShow() {
-      const listIterm = document.getElementById('listIterm');
-      const hireContent = document.getElementById('hire-content');
+      const listIterm = document.getElementById("listIterm");
+      const hireContent = document.getElementById("hire-content");
 
-      listIterm.classList.toggle('list-iterm-open');
+      listIterm.classList.toggle("list-iterm-open");
 
-      if (listIterm.className === 'default bo-t bo-b list-iterm-open') {
-        hireContent.classList.add('content-show');
+      if (listIterm.className === "default bo-t bo-b list-iterm-open") {
+        hireContent.classList.add("content-show");
       } else {
-        hireContent.classList.remove('content-show');
+        hireContent.classList.remove("content-show");
       }
     },
 
     close() {
-      const player = document.getElementById('player');
-      player.style.visibility = 'hidden';
+      const player = document.getElementById("player");
+      player.style.visibility = "hidden";
     },
 
     play() {
-      player.style.visibility = 'visible';
-    },
+      player.style.visibility = "visible";
+    }
   },
   data() {
     return {
       headerCards: [
         {
-          title: '桌面型量子计算机',
-          subTitle: 'SpinQ Hardware',
+          title: "桌面型量子计算机",
+          subTitle: "SpinQ Hardware",
           iconSrc: icon_1,
-          id: '#hardware-anchor',
+          id: "#hardware-anchor"
         },
         {
-          title: '软件介绍',
-          subTitle: 'SpinQ software',
+          title: "软件介绍",
+          subTitle: "SpinQ software",
           iconSrc: icon_4,
-          id: '#software-anchor',
+          id: "#software-anchor"
         },
         {
-          title: 'SpinQ 团队成员',
-          subTitle: 'SpinQ Team',
+          title: "SpinQ 团队成员",
+          subTitle: "SpinQ Team",
           iconSrc: icon_6,
-          id: '#team-anchor',
-        },
+          id: "#team-anchor"
+        }
       ],
       titles: [
         {
-          title: '桌面型量子计算机',
-          subTitle: 'SpinQ Hardware',
-          des: '给量子计算科研入门者和爱好者带来不一样的体验',
+          title: "桌面型量子计算机",
+          subTitle: "SpinQ Hardware",
+          des: "给量子计算科研入门者和爱好者带来不一样的体验",
           titleImg: icon_1,
-          isRight: false,
+          isRight: false
         },
         {
-          title: '核磁共振',
-          subTitle: 'SpinQ Hardware',
+          title: "核磁共振",
+          subTitle: "SpinQ Hardware",
           des:
-            '在强磁场下，具有非零核自旋会处于不同的能量状态，利用相应的电磁波可以操控核自旋状态的跃迁和演化。',
+            "在强磁场下，具有非零核自旋会处于不同的能量状态，利用相应的电磁波可以操控核自旋状态的跃迁和演化。",
           titleImg: icon_2,
-          isRight: true,
+          isRight: true
         },
         {
-          title: '原型机',
-          subTitle: 'SpinQ Hardware',
+          title: "原型机",
+          subTitle: "SpinQ Hardware",
           des:
-            '桌面型核磁共振量子计算仪器体积小、稳定性好，具有量子计算的所有元素，并且操控简单，提供量子计算教学的整体解决方案。',
+            "桌面型核磁共振量子计算仪器体积小、稳定性好，具有量子计算的所有元素，并且操控简单，提供量子计算教学的整体解决方案。",
           titleImg: icon_3,
-          isRight: true,
+          isRight: true
         },
         {
-          title: '量子计算云平台',
-          subTitle: 'SpinQ Software',
+          title: "量子计算云平台",
+          subTitle: "SpinQ Software",
           des:
-            '全球第一个开放底层脉冲控制的量子计算云平台，提供专业级的科研量子计算实验平台。',
+            "全球第一个开放底层脉冲控制的量子计算云平台，提供专业级的科研量子计算实验平台。",
           titleImg: icon_4,
-          isRight: true,
+          isRight: true
         },
         {
-          title: '桌面量子操控软件',
-          subTitle: 'SpinQ Software',
+          title: "桌面量子操控软件",
+          subTitle: "SpinQ Software",
           des:
-            '桌面端量子操控软件主要包括初级（内置案例学习）、进阶（自定义量子线路）、量子知识点介绍以及量子游戏和量子论坛模块。',
+            "桌面端量子操控软件主要包括初级（内置案例学习）、进阶（自定义量子线路）、量子知识点介绍以及量子游戏和量子论坛模块。",
           titleImg: icon_5,
-          isRight: true,
+          isRight: true
         },
         {
-          title: '我们的团队',
-          subTitle: 'SpinQ Team',
-          des: '',
+          title: "我们的团队",
+          subTitle: "SpinQ Team",
+          des: "",
           titleImg: icon_6,
-          isRight: false,
+          isRight: false
         },
         {
-          title: '媒体报道',
-          subTitle: 'SpinQ News',
-          des: '',
+          title: "媒体报道",
+          subTitle: "SpinQ News",
+          des: "",
           titleImg: icon_7,
-          isRight: false,
+          isRight: false
         },
         {
-          title: '人才招聘',
-          subTitle: 'SpinQ Hire',
-          des: '',
+          title: "人才招聘",
+          subTitle: "SpinQ Hire",
+          des: "",
           titleImg: icon_8,
-          isRight: false,
-        },
+          isRight: false
+        }
       ],
       teams: [
         {
-          name: '曾 蓓',
-          jobTitle: '首席科学顾问',
+          name: "曾 蓓",
+          jobTitle: "首席科学顾问",
           des:
-            '香港科技大学物理系教授，麻省理工学院物理学博士，清华大学首届基科班本科，从事量子计算研究近20年。',
-          img: team_1,
+            "香港科技大学物理系教授，麻省理工学院物理学博士，清华大学首届基科班本科，从事量子计算研究近20年。",
+          img: team_1
         },
         {
-          name: '俞大鹏',
-          jobTitle: '首席科学顾问',
-          des: '中国科学院院士，北京大学物理学院教授，中国南方科技大学教授。',
-          img: team_2,
+          name: "俞大鹏",
+          jobTitle: "首席科学顾问",
+          des: "中国科学院院士，北京大学物理学院教授，中国南方科技大学教授。",
+          img: team_2
         },
         {
-          name: '刘 松',
-          jobTitle: '技术顾问',
+          name: "刘 松",
+          jobTitle: "技术顾问",
           des:
-            '量子器件与芯片加工中心主任，北京大学博士，长期从事量子器件的微纳加工研究。',
-          img: team_3,
+            "量子器件与芯片加工中心主任，北京大学博士，长期从事量子器件的微纳加工研究。",
+          img: team_3
         },
         {
-          name: '鲁大为',
-          jobTitle: '技术顾问',
+          name: "鲁大为",
+          jobTitle: "技术顾问",
           des:
-            '南方科技大学物理系教授，中国科学技术大学物理学博士，长期从事量子计算研究。',
-          img: team_4,
+            "南方科技大学物理系教授，中国科学技术大学物理学博士，长期从事量子计算研究。",
+          img: team_4
         },
         {
-          name: '苗国兴',
-          jobTitle: '技术顾问',
+          name: "苗国兴",
+          jobTitle: "技术顾问",
           des:
-            '滑铁卢大学电子系教授，布朗大学物理学博士，长期从事拓扑量子计算研究。',
-          img: team_5,
+            "滑铁卢大学电子系教授，布朗大学物理学博士，长期从事拓扑量子计算研究。",
+          img: team_5
         },
         {
-          name: '陈远珍',
-          jobTitle: '技术顾问',
+          name: "陈远珍",
+          jobTitle: "技术顾问",
           des:
-            '南方科技大学量子计算研究所副所长，美国马里兰大学博士，长期从事量子信息和量子材料方面的研究。',
-          img: team_6,
-        },
+            "南方科技大学量子计算研究所副所长，美国马里兰大学博士，长期从事量子信息和量子材料方面的研究。",
+          img: team_6
+        }
       ],
       newsCards: [
         {
           left: [
             {
-              newsTitle: '深圳市科创委领导一行了解小型仪器研发进展',
-              date: '2019/05/09',
-              bgImg: news_1,
+              newsTitle: "深圳市科创委领导一行了解小型仪器研发进展",
+              date: "2019/05/09",
+              bgImg: news_1
             },
             {
-              newsTitle: '量旋科技于南科大开放日展示桌面型量子计算教学仪器',
-              date: '2019/04/13',
-              bgImg: news_2,
+              newsTitle: "量旋科技于南科大开放日展示桌面型量子计算教学仪器",
+              date: "2019/04/13",
+              bgImg: news_2
             },
             {
-              newsTitle: '量旋科技发布桌面型量子计算教学仪器',
-              date: '2019/04/03',
-              bgImg: news_3,
-            },
+              newsTitle: "量旋科技发布桌面型量子计算教学仪器",
+              date: "2019/04/03",
+              bgImg: news_3
+            }
           ],
           right: [
             {
-              newsTitle: '量旋科技发布首款开放控制层的核磁共振量子云平台',
-              date: '2018/11/10',
-              bgImg: news_4,
+              newsTitle: "量旋科技发布首款开放控制层的核磁共振量子云平台",
+              date: "2018/11/10",
+              bgImg: news_4
             },
             {
               newsTitle:
-                '深圳量旋科技（SpinQ）正式注册成立 致力量子计算商业化和普及化',
-              date: '2018/08/27',
-              bgImg: news_5,
-            },
+                "深圳量旋科技（SpinQ）正式注册成立 致力量子计算商业化和普及化",
+              date: "2018/08/27",
+              bgImg: news_5
+            }
           ],
-        },
-        {
-          newsTitle: '深圳市科创委领导一行了解小型仪器研发进展',
-          date: '2019/05/09',
-          bgImg: news_1,
-        },
-        {
-          newsTitle: '量旋科技于南科大开放日展示桌面型量子计算教学仪器',
-          date: '2019/04/13',
-          bgImg: news_1,
-        },
-        {
-          newsTitle: '量旋科技发布桌面型量子计算教学仪器',
-          date: '2019/04/03',
-          bgImg: news_1,
-        },
-        {
-          newsTitle: '量旋科技发布首款开放控制层的核磁共振量子云平台',
-          date: '2018/11/10',
-          bgImg: news_1,
-        },
-        {
-          newsTitle:
-            '深圳量旋科技（SpinQ）正式注册成立 致力量子计算商业化和普及化',
-          date: '2018/08/27',
-          bgImg: news_1,
-        },
-      ],
+          y: [
+            {
+              newsTitle: "深圳市科创委领导一行了解小型仪器研发进展",
+              date: "2019/05/09",
+              bgImg: news_1
+            },
+            {
+              newsTitle: "量旋科技于南科大开放日展示桌面型量子计算教学仪器",
+              date: "2019/04/13",
+              bgImg: news_2
+            },
+            {
+              newsTitle: "量旋科技发布桌面型量子计算教学仪器",
+              date: "2019/04/03",
+              bgImg: news_3
+            },
+            {
+              newsTitle: "量旋科技发布首款开放控制层的核磁共振量子云平台",
+              date: "2018/11/10",
+              bgImg: news_4
+            },
+            {
+              newsTitle:
+                "深圳量旋科技（SpinQ）正式注册成立 致力量子计算商业化和普及化",
+              date: "2018/08/27",
+              bgImg: news_5
+            }
+          ]
+        }
+      ]
     };
-  },
+  }
 };
 </script>
 
@@ -598,6 +603,11 @@ export default {
     .software_2 {
       background-color: $gray;
 
+      // transform-style: preserve-3d;
+      // .container-lg {
+      //   overflow: hidden;
+      // }
+
       .right {
         max-width: 440px;
         ul {
@@ -629,11 +639,12 @@ export default {
         }
       }
       .video {
+        z-index: 0;
         position: relative;
         top: 40px;
         // width: 750px;
         // height: 500px;
-   
+
         // background-image: url("../assets/news_4.jpg");
         // background-size: 101%;
 
@@ -658,6 +669,7 @@ export default {
         }
 
         .play {
+          z-index: 1;
           cursor: pointer;
           position: absolute;
           width: 80px;
@@ -768,12 +780,23 @@ export default {
       .container-lg {
         position: relative;
         max-height: 740px;
+     
         max-width: 1080px;
         padding: 0 40px 0 148px;
         background-color: $gray;
         border-radius: 8px;
+        overflow: hidden;
         @include flex-all-center {
           justify-content: space-between;
+        }
+
+        .scroll-x {
+          display: none !important;
+          position: absolute;
+          bottom: 0;
+           @include flex-all-center {
+                 flex-wrap: nowrap;
+           }
         }
 
         .common-title {
@@ -914,7 +937,7 @@ export default {
                 right: 4px;
                 top: 34px;
                 display: block;
-                width:22px;
+                width: 22px;
                 height: 22px;
                 background-image: url("../assets/hire_2.svg");
                 background-size: cover;
@@ -950,7 +973,8 @@ export default {
               padding-bottom: 510px;
               align-items: flex-start;
               transition: all 0.3s ease;
-              box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.14), 0 -1px 2px rgba(0,0,0,0.1);
+              box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.14),
+                0 -1px 2px rgba(0, 0, 0, 0.1);
               border-color: transparent;
               border-radius: 8px;
 

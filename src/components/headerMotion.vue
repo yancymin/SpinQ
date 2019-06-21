@@ -52,7 +52,7 @@ export default {
 }
 
 .container {
-  transform: rotateX(40deg) rotateY(40deg) rotateZ(90deg);
+  transform: rotate3d(40deg,40deg,90deg);
   transform-style: preserve-3d;
   position: relative;
   display: flex;
@@ -67,21 +67,22 @@ export default {
   height: 100%;
   width: 100%;
   transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .sphere {
-  animation: rotateSphere 40s linear infinite;
+  animation: rotateSphere 50s linear infinite;
   &:nth-of-type(1) {
     @for $i from 1 through 10 {
       .ring:nth-of-type(#{$i}) {
-        transform: rotateY($i * 18deg);
+        transform: rotate3d(0,1,0,$i * 18deg);
       }
     }
   }
   &:nth-of-type(2) {
     @for $i from 1 through 10 {
       .ring:nth-of-type(#{$i}) {
-        transform: rotateX($i * 18deg);
+        transform: rotate3d(1,0,0,$i * 18deg);
       }
     }
   }
@@ -95,7 +96,7 @@ $colors: #40e0d0, #4ae2d2, #53e3d5, #5de5d7, #66e6d9, #70e8dc, #79e9de, #83ebe0,
   box-sizing: border-box;
   border-radius: 50%;
   opacity: 0;
-  animation: fadeIn 2000ms ease infinite;
+  animation: fadeIn 3000ms ease infinite;
   box-shadow: 0 0 80px rgba(#fff, 0.2), inset 0 0 80px rgba(#fff, 0.2);
   @for $i from 1 through 10 {
     &:nth-of-type(#{$i}) {

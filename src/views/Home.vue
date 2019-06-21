@@ -791,12 +791,10 @@ export default {
         }
 
         .scroll-x {
-          display: none !important;
+          display: none;
           position: absolute;
           bottom: 0;
-           @include flex-all-center {
-                 flex-wrap: nowrap;
-           }
+      
         }
 
         .common-title {

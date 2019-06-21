@@ -138,15 +138,20 @@
                     }
 
                     .scroll-x {
+                        width: 100%;
                         display: flex !important;
                         animation: scrollx 10s linear infinite;
+                        overflow: hidden;
+                        @include flex-all-center {
+                            flex-wrap: nowrap;
+                      }
                         @keyframes scrollx {
                             0% {
                               transform: translate3d(0, 0, 0);
                             }
                 
                             to {
-                              transform: translate3d(820px,0 , 0);
+                              transform: translate3d(50%,0 , 0);
                             }
                           }
                     }

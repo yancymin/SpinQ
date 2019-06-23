@@ -70,20 +70,17 @@ export default {
   will-change: transform;
 }
 
+
 .sphere {
   animation: rotateSphere 50s linear infinite;
   &:nth-of-type(1) {
     @for $i from 1 through 10 {
-      .ring:nth-of-type(#{$i}) {
-        transform: rotate3d(0,1,0,$i * 18deg);
-      }
+      .ring:nth-of-type(#{$i}) { transform: rotateY($i*18deg); }
     }
   }
   &:nth-of-type(2) {
     @for $i from 1 through 10 {
-      .ring:nth-of-type(#{$i}) {
-        transform: rotate3d(1,0,0,$i * 18deg);
-      }
+      .ring:nth-of-type(#{$i}) { transform: rotateX($i*18deg); }
     }
   }
 }

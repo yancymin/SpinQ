@@ -22,7 +22,7 @@
         </ul>
       </div>
       <div class="right">
-        <div class="mobile-menu" @click.stop="openMenu()">
+        <div class="menu-icon" @click.stop="openMenu()">
           <svg
             width="25"
             height="24"
@@ -81,12 +81,10 @@ export default {
   },
   methods: {
     openMenu: function() {
-      const menu = document.getElementById("mobile-menu");
-      menu.classList.remove("close");
-      this.isShow = true;
-      if (menu.className == "mobile-menu close menuShow") {
-        this.isShow = false;
-      }
+      // const menu = document.getElementById("mobile-menu");
+      // menu.classList.remove("close");
+      this.isShow =! this.isShow;
+    
     }
   }
 };
@@ -173,6 +171,10 @@ export default {
       border-radius: 3px;
       transition: all 0.3s ease;
 
+      .menu-icon {
+        display: none;
+      }
+
       &:hover {
         border: 1px solid rgba(50, 50, 93, 0.14);
 
@@ -234,6 +236,9 @@ export default {
     }
 
     .right {
+      .menu-icon {
+        display: flex !important;
+      }
       span,
       .lang {
         display: none !important;

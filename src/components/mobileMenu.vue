@@ -54,18 +54,18 @@ export default {
   name: "mobileMenu",
   data() {
     return {
-      isClose: false
+      // isClose: false
     };
   },
   methods: {
     anchor: function() {
-      this.isClose = false;
+      // this.isClose = false;
     },
 
     menuClose: function() {
       const menu = document.getElementById("mobile-menu");
       menu.classList.remove("menuShow");
-      this.isClose = true
+      // this.isClose =! this.isClose
     }
   }
 };
@@ -74,10 +74,10 @@ export default {
 <style lang="scss" scoped>
 @import "../style/global.scss";
 
-.close {
-  transform: translateX(-100%) !important;
-  // opacity: 0;
-}
+// .close {
+//   transform: translateX(-100%) !important;
+//   // opacity: 0;
+// }
 
 .mobile-menu {
   // display: none;

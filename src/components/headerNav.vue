@@ -21,7 +21,7 @@
       </ul>
     </div>
     <div class="right">
-      <div class="mobile-menu">
+      <div class="menu-icon">
         <svg
           width="25"
           height="24"
@@ -156,6 +156,10 @@ export default {
         margin-right: 8px;
       }
     }
+
+    .menu-icon {
+      display: none;
+    }
     .lang {
       opacity: 0;
       z-index: 10000;
@@ -190,6 +194,7 @@ export default {
   }
 }
 
+
 @media screen and (max-width: 780px) {
   .headerNav {
     padding: 16px 0;
@@ -203,6 +208,9 @@ export default {
     }
 
     .right {
+       .menu-icon {
+    display: flex;
+  }
       span,
       .lang {
         display: none;

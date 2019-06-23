@@ -21,7 +21,7 @@
       </ul>
     </div>
     <div class="right">
-      <div class="menu-icon">
+      <div class="menu-icon" @click.stop="openMenu()">
         <svg
           width="25"
           height="24"
@@ -59,18 +59,30 @@
         </li>
       </ul>
     </div>
-    <!-- <mobileMenu /> -->
+    <mobileMenu :class="{ menuShow: isShow }" :isBlue="isBlue"/>
   </div>
 </template>
 
 <script>
-import mobileMenu from "../components/mobileMenu.vue"
+import mobileMenu from "../components/mobileMenu.vue";
 
 export default {
   name: "headerNav",
   props: {},
-  components : {
+  components: {
     mobileMenu
+  },
+  data() {
+    return {
+      isShow: false,
+      isBlue: false
+    };
+  },
+  methods: {
+    openMenu: function() {
+      this.isShow = !this.isShow;
+      this.isBlue = true;
+    }
   }
 };
 </script>
@@ -78,6 +90,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "../style/global.scss";
+
+.menuShow {
+  opacity: 1;
+  // transform: translateX(0) !important;
+}
 
 .headerNav {
   position: relative;
@@ -194,7 +211,6 @@ export default {
   }
 }
 
-
 @media screen and (max-width: 780px) {
   .headerNav {
     padding: 16px 0;
@@ -208,9 +224,9 @@ export default {
     }
 
     .right {
-       .menu-icon {
-    display: flex;
-  }
+      .menu-icon {
+        display: flex;
+      }
       span,
       .lang {
         display: none;

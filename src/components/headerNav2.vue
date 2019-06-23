@@ -61,7 +61,7 @@
         </ul>
       </div>
     </div>
-    <mobileMenu :class="{ menuShow: isShow }"/>
+    <mobileMenu :class="{ menuShow: isShow }" />
   </div>
 </template>
 
@@ -76,14 +76,14 @@ export default {
   },
   data() {
     return {
-      isShow: false
+      isShow: false,
     };
   },
   methods: {
     openMenu: function() {
-      // const menu = document.getElementById("mobile-menu");
-      // menu.classList.remove("close");
-      this.isShow =! this.isShow;
+
+      this.isShow =! this.isShow
+
     
     }
   }
@@ -95,8 +95,8 @@ export default {
 @import "../style/global.scss";
 
 .menuShow {
-  // opacity: 1;
-  transform: translateX(0) !important;
+  opacity: 1;
+  // transform: translateX(0) !important;
 }
 
 .headerNav2 {

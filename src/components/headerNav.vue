@@ -21,6 +21,20 @@
       </ul>
     </div>
     <div class="right">
+      <div class="mobile-menu">
+        <svg
+          width="25"
+          height="24"
+          viewBox="0 0 25 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M3.56543 18H21.5654V16H3.56543V18ZM3.56543 13H21.5654V11H3.56543V13ZM3.56543 6V8H21.5654V6H3.56543Z"
+            fill="#FEFEFF"
+          ></path>
+        </svg>
+      </div>
       <span>
         <svg
           width="18"
@@ -45,13 +59,19 @@
         </li>
       </ul>
     </div>
+    <!-- <mobileMenu /> -->
   </div>
 </template>
 
 <script>
+import mobileMenu from "../components/mobileMenu.vue"
+
 export default {
-  name: 'headerNav',
+  name: "headerNav",
   props: {},
+  components : {
+    mobileMenu
+  }
 };
 </script>
 
@@ -170,13 +190,24 @@ export default {
   }
 }
 
-@media screen and (max-width: 780px)  {
-    .headerNav {
-      .left {
-          ul {
+@media screen and (max-width: 780px) {
+  .headerNav {
+    padding: 16px 0;
+    .left {
+      img {
+        height: 32px;
+      }
+      ul {
         display: none;
       }
+    }
+
+    .right {
+      span,
+      .lang {
+        display: none;
       }
     }
+  }
 }
 </style>

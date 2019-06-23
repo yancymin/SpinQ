@@ -148,6 +148,7 @@
       </section>
     </main>
     <globalFooter/>
+    <!-- <mobileMenu/> -->
   </div>
 </template>
 
@@ -160,6 +161,7 @@ import commonTitle from "../components/commonTitle.vue";
 import teamIterm from "../components/teamIterm.vue";
 import newsCard from "../components/newsCard.vue";
 import globalFooter from "../components/globalFooter.vue";
+// import mobileMenu from "../components/mobileMenu.vue";
 import icon_1 from "../assets/icon_1.svg";
 import icon_2 from "../assets/icon_2.svg";
 import icon_3 from "../assets/icon_3.svg";
@@ -190,7 +192,8 @@ export default {
     commonTitle,
     teamIterm,
     newsCard,
-    globalFooter
+    globalFooter,
+    // mobileMenu
   },
   mounted() {
     const header = document.querySelector("#headerNav");

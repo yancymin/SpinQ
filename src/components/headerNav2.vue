@@ -22,6 +22,20 @@
         </ul>
       </div>
       <div class="right">
+        <div class="mobile-menu" @click.stop="openMenu()">
+          <svg
+            width="25"
+            height="24"
+            viewBox="0 0 25 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.56543 18H21.5654V16H3.56543V18ZM3.56543 13H21.5654V11H3.56543V13ZM3.56543 6V8H21.5654V6H3.56543Z"
+              fill="#000000"
+            ></path>
+          </svg>
+        </div>
         <span>
           <svg
             width="18"
@@ -47,29 +61,53 @@
         </ul>
       </div>
     </div>
+    <mobileMenu :class="{ menuShow: isShow }"/>
   </div>
 </template>
 
 <script>
+import mobileMenu from "../components/mobileMenu";
+
 export default {
-  name: 'headerNav',
+  name: "headerNav",
   props: {},
+  components: {
+    mobileMenu
+  },
+  data() {
+    return {
+      isShow: false
+    };
+  },
+  methods: {
+    openMenu: function() {
+      const menu = document.getElementById("mobile-menu");
+      menu.classList.remove("close");
+      this.isShow = true;
+      if (menu.className == "mobile-menu close menuShow") {
+        this.isShow = false;
+      }
+    }
+  }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped lang="scss">
 @import "../style/global.scss";
 
+.menuShow {
+  // opacity: 1;
+  transform: translateX(0) !important;
+}
+
 .headerNav2 {
-  // transform:translateZ(5000px);
   z-index: 9999;
   position: fixed;
   top: 0;
   left: 0;
   transition: all 0.3s ease;
   width: 100vw;
-  padding: 16px 0;
   background-color: white;
   box-shadow: 0px 2px 3px rgba(50, 50, 93, 0.14);
   transform: translateY(-100px);
@@ -80,6 +118,7 @@ export default {
     position: relative;
     width: 100%;
     max-width: 1280px;
+    padding: 16px 0;
     margin: 0 24px;
     @include flex-all-center {
       justify-content: space-between;
@@ -89,8 +128,8 @@ export default {
 
       .logo {
         position: absolute;
-        left: 0;
-        height: 90%;
+        left: -8px;
+        height: 32px;
       }
 
       ul {
@@ -186,27 +225,32 @@ export default {
   }
 }
 
-@media screen and (max-width: 780px)  {
-    .headerNav2 {
-      .left {
-          ul {
+@media screen and (max-width: 780px) {
+  .headerNav2 {
+    .left {
+      ul {
         display: none !important;
       }
+    }
+
+    .right {
+      span,
+      .lang {
+        display: none !important;
       }
+    }
 
     .container-lg {
-          justify-content: space-between !important;
+      justify-content: space-between !important;
     }
-    }
+  }
 }
 
 @media screen and (max-width: 1160px) {
-    .headerNav2 {
-    
-
+  .headerNav2 {
     .container-lg {
-          justify-content: space-between !important;
+      justify-content: space-between !important;
     }
-    }
-} 
+  }
+}
 </style>

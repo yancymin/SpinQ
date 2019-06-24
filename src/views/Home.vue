@@ -206,7 +206,7 @@ export default {
     teamIterm,
     newsCard,
     globalFooter,
-    mobileMenu,
+    mobileMenu
   },
   mounted() {
     const header = document.querySelector("#headerNav");
@@ -230,7 +230,7 @@ export default {
       console.log("getClick");
     },
     triggerMobile(triggearValue) {
-        this.isShow = triggerValue;
+      this.isShow = triggerValue;
     },
 
     newsScroll() {
@@ -477,6 +477,7 @@ export default {
 #video-wrap {
   width: 100%;
   height: 100%;
+  position: relative;
   overflow: hidden;
   display: flex;
   justify-content: center;

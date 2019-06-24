@@ -209,7 +209,9 @@
 @media screen and (max-width: 420px) {
     #app {
         #hero-video {
-            height: 86vh
+            height: 86vh;
+            position: absolute;
+            top: 0;
         }
 
         #header-motion-container {

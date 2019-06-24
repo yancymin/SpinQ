@@ -463,6 +463,7 @@ export default {
 
 #video-wrap {
   width: 100vw;
+  height: 100%;
   overflow: hidden;
   display: flex;
   justify-content: center;

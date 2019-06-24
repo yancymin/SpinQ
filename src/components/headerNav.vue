@@ -21,7 +21,7 @@
       </ul>
     </div>
     <div class="right">
-      <div class="menu-icon" @click.stop="openMenu()">
+      <!-- <div class="menu-icon" @click.stop="openMenu()">
         <svg
           width="25"
           height="24"
@@ -34,7 +34,7 @@
             fill="#FEFEFF"
           ></path>
         </svg>
-      </div>
+      </div> -->
       <span>
         <svg
           width="18"
@@ -59,7 +59,7 @@
         </li>
       </ul>
     </div>
-    <mobileMenu :class="{ menuShow: isShow }" :isBlue="isBlue" />
+    <!-- <mobileMenu :class="{ menuShow: isShow }" :isBlue="isBlue" /> -->
   </div>
 </template>
 
@@ -70,21 +70,21 @@ export default {
   name: "headerNav",
   props: {},
   components: {
-    mobileMenu
+    // mobileMenu
   },
-  data() {
-    return {
-      isShow: false,
-      isBlue: false,
+  // data() {
+  //   return {
+  //     isShow: false,
+  //     isBlue: false,
    
-    };
-  },
-  methods: {
-    openMenu: function() {
-      this.isShow = !this.isShow;
-      this.isBlue = true;
-    }
-  }
+  //   };
+  // },
+  // methods: {
+  //   openMenu: function() {
+  //     this.isShow = !this.isShow;
+  //     this.isBlue = true;
+  //   }
+  // }
 };
 </script>
 
@@ -231,7 +231,7 @@ export default {
       }
       span,
       .lang {
-        display: none;
+        // display: none;
       }
     }
   }

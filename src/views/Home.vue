@@ -61,7 +61,7 @@
       <section class="software_2 ptb-80" id="software-anchor">
         <div class="player" id="player">
           <i class="close" id="close" @click="close()"></i>
-          <video src="../assets/video-test.mp4" type="video/mp4" controls></video>
+          <video class="soft-video" src="../assets/video-test.mp4" type="video/mp4" controls></video>
         </div>
         <div class="container-lg">
           <div class="video">
@@ -787,8 +787,8 @@ export default {
         }
       }
 
-      iframe {
-        z-index: 99999999;
+      .soft-video {
+        /* z-index: 99999; */
         width: 80%;
         height: 80%;
       }

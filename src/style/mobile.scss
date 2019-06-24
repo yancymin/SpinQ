@@ -69,6 +69,8 @@
                 .video {
                     top: -10px;
                     left: 2%;
+
+                
                 }
 
                 .right {
@@ -257,6 +259,19 @@
         .software_1 {
             button {
                 margin-bottom: 12px;
+            }
+        }
+
+        .software_2 {
+            .video {
+                img {
+                    left: 0;
+                    top: 50px;
+                }
+
+                .play {
+                    top: 120px;
+                }
             }
         }
 

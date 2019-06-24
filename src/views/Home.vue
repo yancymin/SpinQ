@@ -44,10 +44,14 @@
           <div class="commonTitle_wrap">
             <commonTitle :titles="titles[3]" class="mb-48"/>
             <div class="buttons">
-              <button>
-                <i></i>技术论文
-              </button>
-              <button>云平台网址</button>
+              <a href>
+                <button>
+                  <i></i>技术论文
+                </button>
+              </a>
+              <a href="http://quantumworld.sustc.edu.cn">
+                <button>云平台网址</button>
+              </a>
             </div>
           </div>
           <img src="../assets/software_1.png" alt>
@@ -162,7 +166,7 @@
 <script>
 import headerNav from "../components/headerNav.vue";
 import headerNav2 from "../components/headerNav2.vue";
-import headerMotion from "../components/headerMotion.vue";
+// import headerMotion from "../components/headerMotion.vue";
 import headerCard from "../components/headerCard.vue";
 import commonTitle from "../components/commonTitle.vue";
 import teamIterm from "../components/teamIterm.vue";
@@ -195,7 +199,7 @@ export default {
   components: {
     headerNav,
     headerNav2,
-    headerMotion,
+    // headerMotion,
     headerCard,
     commonTitle,
     teamIterm,

@@ -220,6 +220,9 @@ export default {
         header2.classList.remove("headerChange");
       }
     });
+
+    const video = document.getElementById("hero-video");
+    video.play();
   },
   methods: {
     clickIcon() {

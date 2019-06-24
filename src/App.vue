@@ -11,7 +11,7 @@
 
 #app {
   width: 100vw;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -19,6 +19,11 @@
   overflow-x: hidden;
 }
 body {
+  overflow-x: hidden;
+}
+
+html {
+  width: 100vw;
   overflow-x: hidden;
 }
 </style>

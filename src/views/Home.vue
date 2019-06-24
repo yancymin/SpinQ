@@ -605,6 +605,14 @@ export default {
         .buttons {
           @include flex-all-center;
 
+          a {
+            &:last-child {
+              button {
+                background-color: $green;
+              }
+            }
+          }
+
           button {
             width: 180px;
             height: 45px;

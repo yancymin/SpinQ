@@ -64,7 +64,7 @@
         </div>
         <div class="container-lg">
           <div class="video">
-            <img src="../assets/news_4.jpg" alt>
+            <img src="../assets/news_4_1.png" alt>
 
             <div class="play" @click="play()"></div>
           </div>
@@ -113,7 +113,11 @@
           </div>
           <div class="scroll-x">
             <newsCard v-for="(item, index) in newsCards[0].y" :key="index" :newsCard="item"/>
-            <newsCard v-for="(item, index) in newsCards[0].y"    :key="index + '-label'" :newsCard="item"/>
+            <newsCard
+              v-for="(item, index) in newsCards[0].y"
+              :key="index + '-label'"
+              :newsCard="item"
+            />
           </div>
         </div>
       </section>
@@ -180,6 +184,7 @@ import news_1 from "../assets/news_1.jpg";
 import news_2 from "../assets/news_2.jpg";
 import news_3 from "../assets/news_3.jpg";
 import news_4 from "../assets/news_4.jpg";
+import news_4_1 from "../assets/news_4_1.png";
 import news_5 from "../assets/news_5.jpg";
 
 export default {
@@ -192,7 +197,7 @@ export default {
     commonTitle,
     teamIterm,
     newsCard,
-    globalFooter,
+    globalFooter
     // mobileMenu
   },
   mounted() {
@@ -652,17 +657,18 @@ export default {
         // background-size: 101%;
 
         border-radius: 8px;
-        overflow: hidden;
-        transform: perspective(1000px) rotate3d(-58, -235, 54, -21deg);
-        box-shadow: -27.1px 62.5px 125px -25px rgba(50, 50, 93, 0.3),
-          -16.2px 37.5px 75px -37.5px rgba(16, 33, 80, 0.3);
+        // overflow: hidden;
+        // transform: perspective(1000px) rotate3d(-58, -235, 54, -21deg);
+
         @include flex-all-center;
 
         img {
           position: relative;
-          right: -2px;
-          width: 750px;
+          width: 800px;
           max-width: 100%;
+          left: -50px;
+          // box-shadow: -27.1px 62.5px 125px -25px rgba(50, 50, 93, 0.3),
+          //   -16.2px 37.5px 75px -37.5px rgba(16, 33, 80, 0.3);
         }
 
         &:hover {
@@ -672,6 +678,8 @@ export default {
         }
 
         .play {
+          left: 44%;
+          top: 185px;
           z-index: 1;
           cursor: pointer;
           position: absolute;
@@ -783,7 +791,7 @@ export default {
       .container-lg {
         position: relative;
         max-height: 740px;
-     
+
         max-width: 1080px;
         padding: 0 40px 0 148px;
         background-color: $gray;
@@ -797,7 +805,6 @@ export default {
           display: none;
           position: absolute;
           bottom: 0;
-      
         }
 
         .common-title {

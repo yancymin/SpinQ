@@ -138,9 +138,9 @@
                     }
 
                     .scroll-x {
-                        width: 100%;
+                        // width: 100%;
                         display: flex !important;
-                        animation: scrollx 10s linear infinite;
+                        animation: scrollx 40s linear infinite;
                         overflow: hidden;
                         @include flex-all-center {
                             flex-wrap: nowrap;

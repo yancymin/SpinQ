@@ -59,7 +59,7 @@
         </li>
       </ul>
     </div>
-    <mobileMenu :class="{ menuShow: isShow }" :isBlue="isBlue"/>
+    <mobileMenu :class="{ menuShow: isShow }" :isBlue="isBlue" />
   </div>
 </template>
 
@@ -75,7 +75,8 @@ export default {
   data() {
     return {
       isShow: false,
-      isBlue: false
+      isBlue: false,
+   
     };
   },
   methods: {
@@ -93,6 +94,7 @@ export default {
 
 .menuShow {
   opacity: 1;
+  display: flex !important;
   // transform: translateX(0) !important;
 }
 

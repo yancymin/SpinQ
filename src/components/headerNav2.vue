@@ -77,14 +77,13 @@ export default {
   data() {
     return {
       isShow: false,
+      // isAnchor: false
     };
   },
   methods: {
     openMenu: function() {
-
-      this.isShow =! this.isShow
-
-    
+      this.isShow = !this.isShow;
+      // isAnchor: true
     }
   }
 };
@@ -96,6 +95,7 @@ export default {
 
 .menuShow {
   opacity: 1;
+  display: flex !important;
   // transform: translateX(0) !important;
 }
 

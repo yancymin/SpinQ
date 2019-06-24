@@ -52,33 +52,44 @@
 <script>
 export default {
   name: "mobileMenu",
-  props: ["isBlue"],
+  props: ["isBlue", "isAnchor"],
   data() {
     return {
       // isClose: false
-    };
-  }
-  // methods: {
-  //   anchor: function() {
-  //     // this.isClose = false;
-  //   },
 
-  //   menuClose: function() {
-  //     // const menu = document.getElementById("mobile-menu");
-  //     // menu.classList.remove("menuShow");
-  //     // this.isClose =! this.isClose
-  //   }
-  // }
+      // isAnchor: true
+    };
+  },
+  updated: {
+    anchor: function() {
+      const menuShow = document.getElementById("mobile-menu");
+      // this.isAnchor =false;
+      menuShow.classList.remove("menuShow");
+      console.log(menuShow)
+
+    //  setTimeout(() => {
+    //   this.isAnchor =true;
+    //   menuShow.classList.remove("menuShow")
+    //  }, 500);
+    },
+  }
+
+    // menuClose: function() {
+      // const menu = document.getElementById("mobile-menu");
+      // menu.classList.remove("menuShow");
+      // this.isClose =! this.isClose
+    // }
+  
 };
 </script>
 
 <style lang="scss" scoped>
 @import "../style/global.scss";
 
-// .close {
-//   transform: translateX(-100%) !important;
-//   // opacity: 0;
-// }
+.close {
+  // transform: translateX(-100%) !important;
+  opacity: 0 !important;
+}
 
 .blue {
   background-color: #0f3b90 !important;
@@ -93,7 +104,7 @@ export default {
 
 .mobile-menu {
   opacity: 0;
-  // display: none;
+  display: none !important;
   position: relative;
   z-index: 9990;
   position: fixed;

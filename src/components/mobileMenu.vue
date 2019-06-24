@@ -52,17 +52,15 @@
 <script>
 export default {
   name: "mobileMenu",
-  props: ["isBlue", "isAnchor"],
+  props: ["isBlue", "isAnchor", "isShow"],
   data() {
     return {
-      // isClose: false
 
-      // isAnchor: true
     };
   },
   methods: {
     anchor: function() {
-      this.$emit('triggerMobile',false)
+      this.$emit('clickIcon',false)
     },
   }
 };
@@ -88,8 +86,8 @@ export default {
 }
 
 .mobile-menu {
-  opacity: 0;
-  display: none !important;
+  /* opacity: 0; */
+  /* display: none !important; */
   position: relative;
   z-index: 9990;
   position: fixed;

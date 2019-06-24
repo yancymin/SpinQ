@@ -69,13 +69,12 @@ export default {
   name: "headerNav",
   data() {
     return {
-      isShow: false,
-      // isAnchor: false
+    
     };
   },
   methods: {
     openMenu: function() {
-      this.$emit('triggerMobile',!this.isShow)
+      this.$emit('clickIcon', true);
     }
   }
 };

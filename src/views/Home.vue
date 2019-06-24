@@ -17,8 +17,8 @@
       </div>
       <div class="header_wrap">
         <headerNav id="headerNav"/>
-        <headerNav2 id="headerNav2" :isShow="isShow" @triggerMobile="triggerMobile" />
-        <mobileMenu :isShow="isShow" @triggerMobile="triggerMobile" />
+        <headerNav2 id="headerNav2" :isShow="isShow" @clickIcon="clickIcon"/>
+        <mobileMenu :isShow="isShow" @clickIcon="clickIcon"/>
       </div>
     </div>
     <div class="header_cards">
@@ -173,7 +173,7 @@ import commonTitle from "../components/commonTitle.vue";
 import teamIterm from "../components/teamIterm.vue";
 import newsCard from "../components/newsCard.vue";
 import globalFooter from "../components/globalFooter.vue";
-// import mobileMenu from "../components/mobileMenu.vue";
+import mobileMenu from "../components/mobileMenu.vue";
 import icon_1 from "../assets/icon_1.svg";
 import icon_2 from "../assets/icon_2.svg";
 import icon_3 from "../assets/icon_3.svg";
@@ -205,8 +205,8 @@ export default {
     commonTitle,
     teamIterm,
     newsCard,
-    globalFooter
-    // mobileMenu
+    globalFooter,
+    mobileMenu,
   },
   mounted() {
     const header = document.querySelector("#headerNav");
@@ -222,10 +222,17 @@ export default {
     });
   },
   methods: {
-    triggerMobile(triggerValue) {
+    clickIcon() {
+      console.log(222);
+      this.isShow = !this.isShow;
+    },
+    getClick() {
+      console.log("getClick");
+    },
+    triggerMobile(triggearValue) {
         this.isShow = triggerValue;
     },
-    
+
     newsScroll() {
       const more = document.getElementById("more-news");
       const cover = document.getElementById("cover");
@@ -262,6 +269,7 @@ export default {
   },
   data() {
     return {
+      isShow: false,
       headerCards: [
         {
           title: "桌面型量子计算机",

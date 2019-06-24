@@ -65,7 +65,7 @@
 
 <script>
 export default {
-  name: "headerNav",
+  name: 'headerNav',
   props: {},
   components: {
     // mobileMenu
@@ -74,7 +74,7 @@ export default {
   //   return {
   //     isShow: false,
   //     isBlue: false,
-   
+
   //   };
   // },
   // methods: {

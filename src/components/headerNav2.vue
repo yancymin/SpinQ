@@ -66,17 +66,17 @@
 
 <script>
 export default {
-  name: "headerNav",
+  name: 'headerNav',
   data() {
     return {
-    
+
     };
   },
   methods: {
-    openMenu: function() {
+    openMenu() {
       this.$emit('clickIcon', true);
-    }
-  }
+    },
+  },
 };
 </script>
 

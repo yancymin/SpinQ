@@ -51,18 +51,18 @@
 
 <script>
 export default {
-  name: "mobileMenu",
-  props: ["isBlue", "isAnchor", "isShow"],
+  name: 'mobileMenu',
+  props: ['isBlue', 'isAnchor', 'isShow'],
   data() {
     return {
 
     };
   },
   methods: {
-    anchor: function() {
-      this.$emit('clickIcon',false)
+    anchor() {
+      this.$emit('clickIcon', false);
     },
-  }
+  },
 };
 </script>
 

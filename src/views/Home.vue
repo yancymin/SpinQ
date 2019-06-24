@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <div class="header">
-        <video src="../assets/hero_video.mp4" autoplay id="hero-video" loop></video>
+      <div class="video-wrap" id="video-wrap">
+        <video src="../assets/hero_video.mp4" autoplay id="hero-video" loop type="video/mp4"></video>
+      </div>
       <div class="text-wrap">
         <div class="text">
           <h1>
@@ -456,6 +458,13 @@ export default {
   position: absolute;
 }
 
+#video-wrap {
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
 .home {
   width: 100%;
   @include flex-all-center {
@@ -482,7 +491,7 @@ export default {
         z-index: 999;
         position: absolute;
         text-align: center;
-            top: 180px;
+        top: 180px;
         @include flex-all-center {
           flex-direction: column;
         }
@@ -511,6 +520,8 @@ export default {
     &_wrap {
       max-width: 1280px;
       width: 90%;
+      position: absolute;
+      top: 0;
       @include flex-column;
     }
   }

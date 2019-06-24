@@ -1,6 +1,8 @@
 @media screen and (max-width: 1160px) {
     #app {
-
+        #hero-video {
+            height:774px
+        }
         .ptb-140 {
             padding: 80px 0;
         }
@@ -200,7 +202,9 @@
 
 @media screen and (max-width: 420px) {
         #app {
-
+            #hero-video {
+                height:86vh
+            }
             #header-motion-container {
                 width: 360px;
                 height: 360px;

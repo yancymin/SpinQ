@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <div class="header">
+        <video src="../assets/hero_video.mp4" autoplay id="hero-video" loop></video>
       <div class="text-wrap">
         <div class="text">
           <h1>
@@ -10,7 +11,7 @@
           </h1>
           <p>SpinQ 扎根于量子计算领域，专注于核磁共振桌面量子计算机的自主研发，推动量子计算的普及化和商业化。</p>
         </div>
-        <headerMotion/>
+        <!-- <headerMotion/> -->
       </div>
       <div class="header_wrap">
         <headerNav id="headerNav"/>
@@ -450,6 +451,11 @@ export default {
   visibility: visible !important;
 }
 
+#hero-video {
+  height: 780px;
+  position: absolute;
+}
+
 .home {
   width: 100%;
   @include flex-all-center {
@@ -477,6 +483,7 @@ export default {
         z-index: 999;
         position: absolute;
         text-align: center;
+            top: 180px;
         @include flex-all-center {
           flex-direction: column;
         }

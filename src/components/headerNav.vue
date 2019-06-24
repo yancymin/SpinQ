@@ -99,6 +99,7 @@ export default {
 }
 
 .headerNav {
+  z-index: 1000;
   position: relative;
   padding: 24px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);

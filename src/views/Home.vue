@@ -468,8 +468,7 @@ export default {
     width: 100vw;
     height: 780px;
     overflow: hidden;
-    background: linear-gradient(180deg, hsl(223, 80%, 30%) 0%, #18d3fe 100%)
-      no-repeat;
+    background: linear-gradient(180deg, #1a3189 0%, #49defa 100%) no-repeat;
 
     .text-wrap {
       width: 100%;

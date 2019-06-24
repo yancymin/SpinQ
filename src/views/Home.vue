@@ -61,14 +61,7 @@
       <section class="software_2 ptb-80" id="software-anchor">
         <div class="player" id="player">
           <i class="close" id="close" @click="close()"></i>
-          <iframe
-            src="//player.bilibili.com/player.html?aid=52949845&cid=92645564&page=1"
-            scrolling="no"
-            border="0"
-            frameborder="no"
-            framespacing="0"
-            allowfullscreen="true"
-          ></iframe>
+          <video src="../assets/video-test.mp4" type="video/mp4" controls></video>
         </div>
         <div class="container-lg">
           <div class="video">

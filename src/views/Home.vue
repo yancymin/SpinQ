@@ -17,7 +17,8 @@
       </div>
       <div class="header_wrap">
         <headerNav id="headerNav"/>
-        <headerNav2 id="headerNav2"/>
+        <headerNav2 id="headerNav2" :isShow="isShow" @triggerMobile="triggerMobile" />
+        <mobileMenu :isShow="isShow" @triggerMobile="triggerMobile" />
       </div>
     </div>
     <div class="header_cards">
@@ -221,6 +222,10 @@ export default {
     });
   },
   methods: {
+    triggerMobile(triggerValue) {
+        this.isShow = triggerValue;
+    },
+    
     newsScroll() {
       const more = document.getElementById("more-news");
       const cover = document.getElementById("cover");

@@ -64,8 +64,6 @@
 </template>
 
 <script>
-import mobileMenu from "../components/mobileMenu.vue";
-
 export default {
   name: "headerNav",
   props: {},

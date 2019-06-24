@@ -1,5 +1,5 @@
 <template>
-  <div class="mobile-menu" id="mobile-menu" :class="{blue: isBlue}">
+  <div class="mobile-menu" id="mobile-menu" :class="{blue: isBlue}" v-show="isShow">
     <div class="top">
       <img src="../assets/nav_logo2.svg" alt>
       <!-- <svg
@@ -60,26 +60,11 @@ export default {
       // isAnchor: true
     };
   },
-  updated: {
+  methods: {
     anchor: function() {
-      const menuShow = document.getElementById("mobile-menu");
-      // this.isAnchor =false;
-      menuShow.classList.remove("menuShow");
-      console.log(menuShow)
-
-    //  setTimeout(() => {
-    //   this.isAnchor =true;
-    //   menuShow.classList.remove("menuShow")
-    //  }, 500);
+      this.$emit('triggerMobile',false)
     },
   }
-
-    // menuClose: function() {
-      // const menu = document.getElementById("mobile-menu");
-      // menu.classList.remove("menuShow");
-      // this.isClose =! this.isClose
-    // }
-  
 };
 </script>
 

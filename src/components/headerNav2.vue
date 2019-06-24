@@ -61,19 +61,12 @@
         </ul>
       </div>
     </div>
-    <mobileMenu :class="{ menuShow: isShow }" />
   </div>
 </template>
 
 <script>
-import mobileMenu from "../components/mobileMenu";
-
 export default {
   name: "headerNav",
-  props: {},
-  components: {
-    mobileMenu
-  },
   data() {
     return {
       isShow: false,
@@ -82,8 +75,7 @@ export default {
   },
   methods: {
     openMenu: function() {
-      this.isShow = !this.isShow;
-      // isAnchor: true
+      this.$emit('triggerMobile',!this.isShow)
     }
   }
 };

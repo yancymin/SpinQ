@@ -459,7 +459,6 @@ export default {
 
 #hero-video {
   height: 780px;
-  position: absolute;
 }
 
 #video-wrap {

@@ -106,7 +106,7 @@ export default {
   .container-lg {
     position: relative;
     width: 100%;
-    max-width: 1280px;
+    max-width: 1040px;
     padding: 16px 0;
     margin: 0 24px;
     @include flex-all-center {
@@ -189,7 +189,7 @@ export default {
       .lang {
         opacity: 0;
         position: absolute;
-        top: 40px;
+        top: 60px;
         width: 148px;
         padding: 8px;
         background-color: white;

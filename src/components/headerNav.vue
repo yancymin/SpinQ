@@ -97,7 +97,7 @@ export default {
 }
 
 .headerNav {
-  z-index: 1000;
+  z-index: 1040;
   position: relative;
   padding: 24px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
@@ -149,6 +149,7 @@ export default {
   }
 
   .right {
+    position: relative;
     border: 1px solid transparent;
     cursor: pointer;
     border-radius: 3px;
@@ -180,9 +181,10 @@ export default {
     }
     .lang {
       opacity: 0;
-      z-index: 10000;
+      z-index: 10400;
       position: absolute;
-      top: 70px;
+      top: 42px;
+      left: -134%;
       width: 148px;
       padding: 8px;
       background-color: white;

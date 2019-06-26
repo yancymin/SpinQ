@@ -25,9 +25,9 @@ export default {
 
 .teamIterm {
   position: relative;
-  width: 344px;
-  max-width: calc(600px - 64px);
-  padding: 32px 40px 32px 32px;
+  width: 270px;
+  // max-width: calc(600px - 64px);
+  padding: 32px 48px 32px 16px;
   border-radius: 8px;
   transition: all 0.3s ease;
   margin-bottom: 24px;
@@ -43,11 +43,11 @@ export default {
 
     .text-wrap {
       h3 {
-        transform: translateY(-45px) translateX(-21px) scale(0.8);
+        transform: translateY(-45px) translateX(-18px) scale(0.8);
       }
 
       span {
-        transform: translateY(-60px) translateX(-22px) scale(0.8);
+        transform: translateY(-60px) translateX(-17px) scale(0.8);
       }
 
       .des {
@@ -57,27 +57,14 @@ export default {
     }
   }
 
-  // &:after {
-  //   content: "";
-  //   z-index: -1;
-  //   position: absolute;
-  //   top: -40px;
-  //   left: -40px;
-  //   display: block;
-  //   width: 610px;
-  //   height: 240px;
-  //   background-color: white;
-  //   box-shadow: 0px 16px 40px rgba(50, 50, 93, 0.14);
-  //   border-radius: 8px;
-  // }
   .default-view {
     @include flex-all-center {
       justify-content: flex-start;
     }
 
     img {
-      width: 160px;
-      height: 160px;
+      width: 120px;
+      height: 120px;
       border-radius: 80px;
       overflow: hidden;
       filter: hue-rotate(0deg) saturate(0.14);
@@ -87,20 +74,20 @@ export default {
     .text-wrap {
       position: relative;
       max-width: 290px;
-      margin-left: 40px;
+      margin-left: 30px;
       @include flex-column {
         align-items: flex-start;
       }
 
       h3 {
-        @include font(32px, $font-color-black-1, 500);
+        @include font(24px, $font-color-black-1, 600);
         transition: all 0.3s ease;
         margin-bottom: 20px;
       }
 
       span {
         transition: all 0.3s ease;
-        @include font(24px, $font-color-black-2, 400);
+        @include font(18px, $font-color-black-2, 400);
       }
 
       .des {
@@ -109,7 +96,7 @@ export default {
         text-align: left;
         left: -10px;
         width: 160px;
-        top: 32px;
+        top: 15px;
         padding-top: 12px;
         transform: translateY(-20px);
         transition: all 0.3s ease;

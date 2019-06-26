@@ -20,7 +20,7 @@ export default {
 
 .headerCard {
   position: relative;
-  max-width: 320px;
+  max-width: 284px;
   width: 100%;
   padding: 18px 24px 24px 24px;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.14);

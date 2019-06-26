@@ -61,7 +61,7 @@
       <section class="software_2 ptb-80" id="software-anchor">
         <div class="player" id="player">
           <i class="close" id="close" @click="close()"></i>
-          <video class="soft-video" src="../assets/video-test.mp4" type="video/mp4" controls></video>
+          <video id="soft-video" class="soft-video" src="../assets/video-test.mp4" type="video/mp4" controls></video>
         </div>
         <div class="container-lg">
           <div class="video">
@@ -265,11 +265,19 @@ export default {
 
     close() {
       const player = document.getElementById("player");
+      const softVideo = document.getElementById("soft-video");
+
       player.style.visibility = "hidden";
+      softVideo.pause();
     },
 
     play() {
+      const softVideo = document.getElementById("soft-video");
+
+      softVideo.play();
+      softVideo.currentTime = 0;
       player.style.visibility = "visible";
+      
     }
   },
   data() {
@@ -499,11 +507,11 @@ export default {
     width: 100vw;
     height: 780px;
     overflow: hidden;
-    background: linear-gradient(180deg, #1a3189 0%, #49defa 100%) no-repeat;
+    background: linear-gradient(180deg, #192f88 0%, #5bdefc 100%) no-repeat;
 
     .text-wrap {
       width: 100%;
-      z-index: 1000;
+      z-index: 1040;
       position: absolute;
       text-align: center;
       margin: 120px 0;
@@ -519,7 +527,7 @@ export default {
         }
 
         h1 {
-          font-size: 64px;
+          font-size: 60px;
           color: white;
           margin: 0 0 32px 0;
           font-weight: 300;
@@ -540,7 +548,7 @@ export default {
     }
 
     &_wrap {
-      max-width: 1280px;
+      max-width: 1040px;
       width: 90%;
       position: absolute;
       top: 0;
@@ -549,10 +557,10 @@ export default {
   }
 
   .header_cards {
-    z-index: 1000;
+    z-index: 1040;
     position: relative;
     top: -90px;
-    max-width: 1170px;
+    max-width: 1040px;
     width: 100%;
     @include flex-all-center {
       justify-content: space-between;
@@ -572,7 +580,7 @@ export default {
 
       .container-lg {
         width: 100%;
-        max-width: 1100px;
+        max-width: 1040px;
         @include flex-all-center {
           justify-content: space-between;
         }
@@ -585,20 +593,19 @@ export default {
     .hardware_1 {
       img {
         position: relative;
-        left: -80px;
-        height: 420px;
+        left: -40px;
+        height: 300px;
       }
     }
     .hardware_2 {
       img {
         position: relative;
-        right: -80px;
-        height: 440px;
+        height: 300px;
       }
     }
     .software_1 {
       img {
-        height: 560px;
+        height: 420px;
         margin-right: -160px;
       }
 
@@ -705,13 +712,13 @@ export default {
 
         border-radius: 8px;
         // overflow: hidden;
-        // transform: perspective(1000px) rotate3d(-58, -235, 54, -21deg);
+        // transform: perspective(1040px) rotate3d(-58, -235, 54, -21deg);
 
         @include flex-all-center;
 
         img {
           position: relative;
-          width: 800px;
+          width: 600px;
           max-width: 100%;
           left: -50px;
           // box-shadow: -27.1px 62.5px 125px -25px rgba(50, 50, 93, 0.3),
@@ -725,8 +732,8 @@ export default {
         }
 
         .play {
-          left: 44%;
-          top: 185px;
+          left: 41%;
+          top: 127px;
           z-index: 1;
           cursor: pointer;
           position: absolute;
@@ -840,7 +847,7 @@ export default {
         max-height: 740px;
 
         max-width: 1080px;
-        padding: 0 40px 0 148px;
+        // padding: 0 20px 0 20px;
         background-color: $gray;
         border-radius: 8px;
         overflow: hidden;
@@ -856,7 +863,7 @@ export default {
 
         .common-title {
           position: relative;
-          left: 76px;
+          left: 149px;
         }
 
         .news_scroll-wrap {
@@ -919,7 +926,7 @@ export default {
           }
 
           button {
-            z-index: 1000;
+            z-index: 1040;
             position: absolute;
             bottom: 60px;
             left: 40%;
